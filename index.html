@@ -7,14 +7,16 @@
     <!-- 引入高级无衬线字体 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 顶级学术UI色彩变量 */
+        /* 现代柔和UI色彩变量 */
         :root {
-            --primary-color: #0c2340; /* 顶尖大学经典的学术深蓝 */
-            --secondary-color: #1d4ed8; /* 交互按钮的亮蓝 */
-            --bg-color: #f8fafc; /* 极具质感的灰白背景 */
-            --text-main: #334155;
-            --text-muted: #64748b;
+            --primary-color: #6366f1; /* 柔和的靛蓝色 */
+            --secondary-color: #8b5cf6; /* 优雅的紫色 */
+            --bg-color: #fafbfc; /* 极简灰白背景 */
+            --text-main: #475569;
+            --text-muted: #94a3b8;
             --white: #ffffff;
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
         }
 
         * {
@@ -62,7 +64,7 @@
 
         /* 页面头部视觉区 */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
             color: var(--white);
             padding: 80px 5%;
             text-align: center;
@@ -98,7 +100,7 @@
         .section-title {
             font-size: 1.5rem;
             color: var(--primary-color);
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid #e5e7eb;
             padding-bottom: 10px;
             margin-top: 40px;
             margin-bottom: 20px;
@@ -126,21 +128,20 @@
 
         .btn-primary {
             display: inline-block;
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: var(--white);
             padding: 16px 40px;
             font-size: 1.1rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 8px;
-            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 6px rgba(29, 78, 216, 0.3);
+            border-radius: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(139, 92, 246, 0.25);
         }
 
         .btn-primary:hover {
-            background-color: #1e40af;
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(29, 78, 216, 0.4);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
         }
 
         /* 页脚版权与联系方式 */
@@ -150,7 +151,7 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             background-color: var(--white);
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #e5e7eb;
         }
 
         .footer a {
@@ -159,7 +160,7 @@
         }
 
         /* 语言显示控制逻辑 */
-        .en { display: none; } /* 默认先显示中文 */
+        .zh { display: none; } /* 默认显示英文 */
 
         /* 移动端适配 */
         @media (max-width: 768px) {
