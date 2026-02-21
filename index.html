@@ -1,89 +1,288 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>智能手机使用研究 (Smartphone Study)</title>
+    <title>Smartphone Study | 智能手机研究</title>
+    <!-- 引入高级无衬线字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        /* 顶级学术UI色彩变量 */
+        :root {
+            --primary-color: #0c2340; /* 顶尖大学经典的学术深蓝 */
+            --secondary-color: #1d4ed8; /* 交互按钮的亮蓝 */
+            --bg-color: #f8fafc; /* 极具质感的灰白背景 */
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6;
-            color: #333;
         }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased; /* 让字体更加平滑高级 */
+        }
+
+        /* 顶部导航与语言切换按钮 */
+        .navbar {
+            background-color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: flex-end;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .lang-switch {
+            background: none;
+            border: 1px solid var(--text-muted);
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+
+        .lang-switch:hover {
+            background: var(--text-main);
+            color: var(--white);
+        }
+
+        /* 页面头部视觉区 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+            color: var(--white);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* 核心内容卡片 */
         .container {
             max-width: 800px;
-            margin: 50px auto;
-            background: #fff;
-            padding: 30px 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin: -40px auto 40px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
         }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 2px solid #3498db;
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
             padding-bottom: 10px;
-        }
-        h2 {
-            color: #2980b9;
-        }
-        p, li {
-            font-size: 16px;
-        }
-        .btn {
-            display: block;
-            width: 250px;
-            margin: 30px auto;
-            padding: 15px;
-            text-align: center;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background-color: #2980b9;
-        }
-        .footer {
             margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .container p, .container ul {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .container ul {
+            padding-left: 20px;
+        }
+
+        .container li {
+            margin-bottom: 10px;
+        }
+
+        /* 填写问卷按钮 */
+        .cta-container {
             text-align: center;
-            font-size: 14px;
-            color: #7f8c8d;
+            margin-top: 50px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(29, 78, 216, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(29, 78, 216, 0.4);
+        }
+
+        /* 页脚版权与联系方式 */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background-color: var(--white);
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* 语言显示控制逻辑 */
+        .en { display: none; } /* 默认先显示中文 */
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 20px; }
+            .hero h1 { font-size: 2rem; }
+            .container {
+                margin: -20px 15px 40px;
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>智能手机使用与行为研究</h1>
-    
-    <h2>欢迎参与我们的研究！</h2>
-    <p>您好！我们正在进行一项关于<strong>智能手机日常使用习惯及其对生活方式影响</strong>的研究。您的参与对我们非常重要。</p>
-    
-    <h2>研究说明</h2>
-    <ul>
-        <li><strong>研究目的：</strong>了解人们使用智能手机的频率、主要用途及心理感受。</li>
-        <li><strong>参与时间：</strong>填写问卷大约需要 5-10 分钟。</li>
-        <li><strong>隐私保护：</strong>本研究为匿名调查，您的所有回答仅用于学术研究，我们将严格保密。</li>
-    </ul>
+    <!-- 顶部导航条 -->
+    <nav class="navbar">
+        <button class="lang-switch" onclick="toggleLanguage()">🌐 English / 中文</button>
+    </nav>
 
-    <h2>参与条件</h2>
-    <p>只要您是智能手机用户即可参与本研究。</p>
+    <!-- 头部背景与大标题 -->
+    <header class="hero">
+        <!-- 英文版标题 -->
+        <div class="en">
+            <h1>Smartphone Usage & Well-being Study</h1>
+            <p>Join our academic research to help understand how digital habits impact our daily lives and mental health.</p>
+        </div>
+        <!-- 中文版标题 -->
+        <div class="zh">
+            <h1>智能手机使用与身心健康研究</h1>
+            <p>诚邀您参与本项学术研究，共同探索数字习惯如何影响我们的日常生活与心理健康。</p>
+        </div>
+    </header>
 
-    <!-- 注意：你可以把下面 href 里的链接替换成你自己的问卷星或腾讯问卷链接 -->
-    <a href="https://www.wjx.cn/你的问卷链接" class="btn" target="_blank">点击此处开始填写问卷</a>
+    <!-- 主体内容区 -->
+    <main class="container">
+        <!-- ================= 英文版内容 ================= -->
+        <div class="en">
+            <h2 class="section-title">About the Study</h2>
+            <p>Welcome! We are an academic research team investigating the relationship between daily smartphone usage patterns and individual well-being. Your participation provides invaluable data for understanding modern digital psychology.</p>
 
-    <div class="footer">
-        <p>如果您对本研究有任何疑问，请联系我们：<a href="mailto:your_email@example.com">你的邮箱@example.com</a></p>
-        <p>&copy; 2026 Smartphone Study Team. 保留所有权利。</p>
-    </div>
-</div>
+            <h2 class="section-title">Eligibility Criteria</h2>
+            <ul>
+                <li>Must be <strong>18 years of age or older</strong>.</li>
+                <li>Must be a regular smartphone user.</li>
+                <li>Fluent in reading English or Chinese.</li>
+            </ul>
 
+            <h2 class="section-title">What's Involved?</h2>
+            <p>If you choose to participate, you will be asked to complete a brief online survey. It will take approximately <strong>5 to 10 minutes</strong>. The questions will focus on your smartphone screen time, app usage habits, and general psychological well-being.</p>
+
+            <h2 class="section-title">Privacy & Ethics</h2>
+            <p>Your privacy is our utmost priority. All data collected will be <strong>strictly confidential and completely anonymized</strong>. The information will be used solely for academic research purposes and stored securely. This study complies with academic ethical standards.</p>
+
+            <div class="cta-container">
+                <!-- 这里替换成你的英文版问卷链接 -->
+                <a href="https://your-survey-link.com" target="_blank" class="btn-primary">Participate Now</a>
+            </div>
+        </div>
+
+        <!-- ================= 中文版内容 ================= -->
+        <div class="zh">
+            <h2 class="section-title">研究简介</h2>
+            <p>您好！我们是学术研究团队，目前正在开展一项关于日常智能手机使用模式与个人身心健康之间关联的研究。您的参与将为理解现代数字心理学提供极其宝贵的数据支持。</p>
+
+            <h2 class="section-title">参与条件</h2>
+            <ul>
+                <li>年龄需满 <strong>18 周岁及以上</strong>。</li>
+                <li>日常经常使用智能手机的用户。</li>
+                <li>能够流畅阅读中文或英文。</li>
+            </ul>
+
+            <h2 class="section-title">参与流程</h2>
+            <p>如果您选择参与本研究，只需填写一份简短的在线问卷。整个过程大约需要 <strong>5 到 10 分钟</strong>。问卷内容主要涉及您的智能手机屏幕使用时间、App 使用习惯以及近期的心理健康状况。</p>
+
+            <h2 class="section-title">隐私与伦理保护</h2>
+            <p>我们高度重视您的隐私。收集到的所有数据都将<strong>严格保密并进行完全匿名化处理</strong>。所有信息仅供学术研究使用，并存放于安全的服务器中。本研究已严格遵循学术机构的伦理审查规范。</p>
+
+            <div class="cta-container">
+                <!-- 这里替换成你的中文版问卷链接 -->
+                <a href="https://your-survey-link.com" target="_blank" class="btn-primary">立即开始填写问卷</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="en">
+            <!-- 这里替换成你的邮箱 -->
+            <p>If you have any questions or concerns about this research, please contact the research team at: <a href="mailto:research@yourdomain.edu">research@yourdomain.edu</a></p>
+            <p style="margin-top: 10px;">&copy; 2026 Smartphone Study Research Team. All rights reserved.</p>
+        </div>
+        <div class="zh">
+            <!-- 这里替换成你的邮箱 -->
+            <p>如果您对本研究有任何疑问或建议，请联系研究团队邮箱：<a href="mailto:research@yourdomain.edu">research@yourdomain.edu</a></p>
+            <p style="margin-top: 10px;">&copy; 2026 智能手机研究团队. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- 语言切换逻辑 (JavaScript) -->
+    <script>
+        let currentLang = 'zh'; // 默认显示中文
+
+        function applyLanguage() {
+            const enElements = document.querySelectorAll('.en');
+            const zhElements = document.querySelectorAll('.zh');
+
+            if (currentLang === 'en') {
+                enElements.forEach(el => el.style.display = 'block');
+                zhElements.forEach(el => el.style.display = 'none');
+            } else {
+                enElements.forEach(el => el.style.display = 'none');
+                zhElements.forEach(el => el.style.display = 'block');
+            }
+        }
+
+        function toggleLanguage() {
+            // 点击按钮时切换语言变量
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            applyLanguage();
+        }
+
+        // 页面加载时执行一次
+        applyLanguage();
+    </script>
 </body>
 </html>
