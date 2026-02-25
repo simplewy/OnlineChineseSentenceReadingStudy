@@ -557,6 +557,175 @@
         width: 100%;
       }
     }
+
+    /* UI Mockup styles for Exp 3&4 instructions */
+    .mockup-container {
+      max-width: 480px;
+      margin: 16px auto;
+    }
+
+    .mockup-feedback {
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      border: 4px solid #000;
+      background: #fff;
+      user-select: none;
+    }
+
+    .mockup-feedback-header {
+      background: #2563eb;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 8px 12px;
+      border-bottom: 2px solid #000;
+    }
+
+    .mockup-feedback-rows {
+      border-bottom: 2px solid #2563eb;
+    }
+
+    .mockup-feedback-row {
+      display: flex;
+      padding: 10px 12px;
+      align-items: center;
+      border-bottom: 2px solid #2563eb;
+    }
+
+    .mockup-feedback-row:last-child {
+      border-bottom: none;
+    }
+
+    .mockup-feedback-row:nth-child(even) {
+      background: rgba(219, 234, 254, 0.3);
+    }
+
+    .mockup-feedback-label {
+      flex: 1;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .mockup-feedback-value {
+      width: 120px;
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .mockup-feedback-footer {
+      height: 80px;
+      position: relative;
+      background: #fff;
+    }
+
+    .mockup-continue-btn {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: #8bc34a;
+      color: #1a237e;
+      font-weight: 700;
+      border: 2px solid #2563eb;
+      padding: 4px 12px;
+      font-size: 12px;
+      box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+      cursor: default;
+    }
+
+    .mockup-showdata-area {
+      background: #1e1e1e;
+      border-radius: 8px 8px 0 0;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      height: 110px;
+      position: relative;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .mockup-showdata-border {
+      border: 2px solid #ef4444;
+      padding: 3px;
+      border-radius: 4px;
+    }
+
+    .mockup-showdata-btn {
+      background: #d1d5db;
+      color: #000;
+      font-size: 12px;
+      padding: 4px 16px;
+      border: 1px solid #9ca3af;
+      cursor: default;
+    }
+
+    .mockup-data-display {
+      background: #2d2d2d;
+      border-radius: 0 0 8px 8px;
+      padding: 14px;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: #fff;
+      overflow-x: auto;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .mockup-data-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .mockup-data-row.faded {
+      opacity: 0.7;
+    }
+
+    .data-green {
+      color: #4ade80;
+    }
+
+    .data-label {
+      background: #4b5563;
+      padding: 1px 5px;
+      color: #e5e7eb;
+      border-radius: 2px;
+    }
+
+    .data-num {
+      background: #374151;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    .data-gray {
+      color: #d1d5db;
+    }
+
+    .data-highlight {
+      background: #d1d5db;
+      color: #000;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    .data-dots {
+      color: #6b7280;
+      margin-top: 6px;
+    }
+
+    .mockup-label {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-muted);
+      margin-top: 8px;
+      margin-bottom: 18px;
+    }
   </style>
 </head>
 
@@ -832,6 +1001,82 @@
               <li data-lang="zh">将文件发送至 <a
                   href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</li>
             </ol>
+
+            <!-- Mockup 1: Feedback Block (illustrates step 1) -->
+            <div class="mockup-container">
+              <div class="mockup-feedback">
+                <div class="mockup-feedback-header">Feedback of the final test block</div>
+                <div class="mockup-feedback-rows">
+                  <div class="mockup-feedback-row">
+                    <div class="mockup-feedback-label">Complete correct trials in the<br>final block of in which both
+                      letter and<br>math tasks were correct (O-span score)</div>
+                    <div class="mockup-feedback-value">30 points (0%)</div>
+                  </div>
+                  <div class="mockup-feedback-row">
+                    <div class="mockup-feedback-label">Percentage correct math<br>problems</div>
+                    <div class="mockup-feedback-value">89%</div>
+                  </div>
+                  <div class="mockup-feedback-row">
+                    <div class="mockup-feedback-label">Percentage correctly remembered<br>letter sequences</div>
+                    <div class="mockup-feedback-value">64%</div>
+                  </div>
+                </div>
+                <div class="mockup-feedback-footer">
+                  <button class="mockup-continue-btn">CONTINUE</button>
+                </div>
+              </div>
+              <div class="mockup-label" data-lang="en">↑ Step 1: Click "CONTINUE" on this feedback page</div>
+              <div class="mockup-label" data-lang="zh">↑ 步骤1：在此反馈页面点击 "CONTINUE"</div>
+            </div>
+
+            <!-- Mockup 2 & 3: Show Data + Data Display (illustrates steps 2 & 3) -->
+            <div class="mockup-container">
+              <div class="mockup-showdata-area">
+                <div class="mockup-showdata-border">
+                  <button class="mockup-showdata-btn">Show data</button>
+                </div>
+              </div>
+              <div class="mockup-data-display">
+                <div class="mockup-data-row">
+                  <span class="data-green">1</span>
+                  <span class="data-label">practiseLetters</span>
+                  <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
+                    class="data-num">0</span>
+                  <span class="data-gray">6416</span>
+                  <span class="data-highlight">999999</span>
+                  <span class="data-num">0</span>
+                  <span class="data-num">2</span><span class="data-num">0</span><span class="data-num">2</span><span
+                    class="data-num">0</span>
+                </div>
+                <div class="mockup-data-row">
+                  <span class="data-green">1</span>
+                  <span class="data-label">practiseLetters</span>
+                  <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
+                    class="data-num">0</span>
+                  <span class="data-gray">2827</span>
+                  <span class="data-highlight">999999</span>
+                  <span class="data-num">0</span>
+                  <span class="data-num">2</span><span class="data-num">0</span><span class="data-num">2</span><span
+                    class="data-num">2</span>
+                </div>
+                <div class="mockup-data-row faded">
+                  <span class="data-green">1</span>
+                  <span class="data-label">practiseLetters</span>
+                  <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
+                    class="data-num">0</span>
+                  <span class="data-gray">4254</span>
+                  <span class="data-highlight">999999</span>
+                  <span class="data-num">0</span>
+                  <span class="data-num">3</span><span class="data-num">0</span><span class="data-num">3</span><span
+                    class="data-num">1</span>
+                </div>
+                <div class="data-dots">... (Data rows continue) ...</div>
+              </div>
+              <div class="mockup-label" data-lang="en">↑ Step 2: Click "Show data" → Step 3: Copy all data rows into
+                Excel</div>
+              <div class="mockup-label" data-lang="zh">↑ 步骤2：点击 "Show data" → 步骤3：复制所有数据行到 Excel</div>
+            </div>
+
             <div class="btn-row">
               <a class="btn btn-light" data-lang="en" href="mailto:liuhuanpsylanguage@foxmail.com">Email the Research
                 Team</a>
@@ -859,8 +1104,8 @@
           <li data-lang="zh">请勿在句子呈现时暂停，建议在回答理解题时休息。</li>
           <li data-lang="en">After completion, email the research team so your record can be verified promptly.</li>
           <li data-lang="zh">完成后请发送邮件通知研究团队，以便及时核对记录。</li>
-          <li data-lang="en">Preferred payment methods: PayPal or Apple Pay (bank transfer is also available).</li>
-          <li data-lang="zh">推荐付款方式：PayPal 或 Apple Pay（也支持银行转账）。</li>
+          <li data-lang="en">Preferred payment methods: PayPal, Apple Pay, Alipay, or WeChat Pay.</li>
+          <li data-lang="zh">推荐付款方式：PayPal、Apple Pay、支付宝或微信支付。</li>
         </ul>
       </article>
     </section>
