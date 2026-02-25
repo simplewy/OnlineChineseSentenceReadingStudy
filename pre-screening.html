@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pre-screening Experiments</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --bg: #f8fafc;
@@ -21,7 +24,11 @@
       --bad: #991b1b;
       --shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.12);
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Manrope", "Noto Sans SC", sans-serif;
@@ -32,11 +39,13 @@
         linear-gradient(180deg, #f1f5f9 0%, #f8fafc 50%, #f8fafc 100%);
       line-height: 1.6;
     }
+
     .wrap {
       max-width: 980px;
       margin: 0 auto;
       padding: 20px;
     }
+
     .hero {
       background: linear-gradient(135deg, #a98cf0 0%, #8869dc 48%, #6f52bf 100%);
       color: #fff;
@@ -44,22 +53,33 @@
       padding: 24px;
       box-shadow: var(--shadow);
     }
-    .hero h1 { margin: 0 0 8px; font-size: 1.5rem; }
-    .hero p { margin: 6px 0; opacity: 0.96; }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+    }
+
+    .hero p {
+      margin: 6px 0;
+      opacity: 0.96;
+    }
+
     .progress-box {
       margin-top: 14px;
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 999px;
       height: 12px;
       overflow: hidden;
     }
+
     .progress {
       width: 0;
       height: 100%;
       background: #fff;
       transition: width .25s ease;
     }
+
     .panel {
       margin-top: 16px;
       background: var(--surface);
@@ -68,13 +88,24 @@
       padding: 18px;
       box-shadow: var(--shadow);
     }
-    h2 { margin: 0 0 12px; font-size: 1.08rem; color: var(--brand-deep); }
-    h3 { margin: 0; font-size: 1rem; }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+      color: var(--brand-deep);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
+
     label.field {
       display: block;
       font-size: 0.9rem;
@@ -82,7 +113,10 @@
       color: var(--ink-muted);
       margin-bottom: 4px;
     }
-    input, select, textarea {
+
+    input,
+    select,
+    textarea {
       width: 100%;
       padding: 10px 12px;
       border: 1px solid var(--line);
@@ -91,6 +125,7 @@
       color: var(--ink);
       background: #fff;
     }
+
     .q {
       border: 1px solid var(--line);
       border-radius: 14px;
@@ -98,7 +133,11 @@
       margin-top: 12px;
       background: #fff;
     }
-    .q h3 { margin: 0 0 8px; }
+
+    .q h3 {
+      margin: 0 0 8px;
+    }
+
     .opt {
       position: relative;
       display: block;
@@ -111,11 +150,14 @@
       cursor: pointer;
       transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
     }
+
     .opt:hover {
       border-color: #c4b5fd;
       box-shadow: 0 6px 14px rgba(111, 82, 191, 0.12);
     }
-    .opt input, .opt input[type="checkbox"] {
+
+    .opt input,
+    .opt input[type="checkbox"] {
       position: absolute;
       left: 12px;
       top: 50%;
@@ -124,20 +166,24 @@
       height: 18px;
       margin: 0;
     }
+
     .opt.selected {
       border-color: #8b5cf6;
       background: linear-gradient(180deg, #f7f3ff 0%, #f3edff 100%);
       box-shadow: 0 8px 16px rgba(111, 82, 191, 0.16);
     }
+
     .vocab-q h3 {
       margin-bottom: 12px;
       font-size: 1.05rem;
     }
+
     .vocab-choice-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
+
     .vocab-choice {
       position: relative;
       display: block;
@@ -153,11 +199,13 @@
       transition: border-color .18s ease, box-shadow .18s ease, transform .12s ease;
       min-height: 64px;
     }
+
     .vocab-choice:hover {
       border-color: #c4b5fd;
       box-shadow: 0 6px 14px rgba(111, 82, 191, 0.14);
       transform: translateY(-1px);
     }
+
     .vocab-choice input {
       position: absolute;
       opacity: 0;
@@ -165,35 +213,42 @@
       width: 0;
       height: 0;
     }
-    .vocab-choice input:checked + span {
+
+    .vocab-choice input:checked+span {
       color: #4c1d95;
     }
-    .vocab-choice input:checked + span::after {
+
+    .vocab-choice input:checked+span::after {
       content: "✓";
       margin-left: 8px;
       font-weight: 900;
     }
+
     .vocab-choice:has(input:checked) {
       border-color: #8b5cf6;
       background: linear-gradient(180deg, #f7f3ff 0%, #f3edff 100%);
       box-shadow: 0 8px 16px rgba(111, 82, 191, 0.18);
     }
+
     .vocab-choice.selected {
       border-color: #8b5cf6;
       background: linear-gradient(180deg, #f7f3ff 0%, #f3edff 100%);
       box-shadow: 0 8px 16px rgba(111, 82, 191, 0.18);
     }
+
     .two-col {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
+
     .actions {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       margin-top: 16px;
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -206,31 +261,37 @@
       cursor: pointer;
       font: inherit;
     }
+
     .btn-primary {
       background: linear-gradient(130deg, var(--brand-deep), var(--brand));
       color: #fff;
       box-shadow: 0 8px 20px rgba(154, 127, 232, 0.25);
     }
+
     .btn-light {
       background: #fff;
       color: var(--ink);
       border-color: var(--line);
     }
+
     .btn:disabled {
       opacity: 0.65;
       cursor: not-allowed;
     }
+
     .tip {
       margin-top: 10px;
       font-size: 0.9rem;
       color: var(--ink-muted);
     }
+
     .error {
       margin-top: 10px;
       color: var(--bad);
       font-size: 0.92rem;
       font-weight: 600;
     }
+
     .upload-status {
       margin-top: 10px;
       padding: 10px 12px;
@@ -241,21 +302,25 @@
       background: #f8fafc;
       color: var(--ink-muted);
     }
+
     .upload-status.ok {
       background: #ecfdf3;
       border-color: #bbf7d0;
       color: var(--ok);
     }
+
     .upload-status.warn {
       background: #fff7ed;
       border-color: #fed7aa;
       color: var(--warn);
     }
+
     .upload-status.bad {
       background: #fef2f2;
       border-color: #fecaca;
       color: var(--bad);
     }
+
     .result {
       margin-top: 16px;
       border-radius: 14px;
@@ -263,24 +328,35 @@
       border: 1px solid var(--line);
       background: #fff;
     }
+
     .result.pass {
       background: #ecfdf3;
       border-color: #bbf7d0;
       color: var(--ok);
     }
+
     .result.fail {
       background: #fef2f2;
       border-color: #fecaca;
       color: var(--bad);
     }
-    .result h3 { margin: 0 0 6px; }
-    .hint { font-size: 0.85rem; color: var(--ink-muted); }
+
+    .result h3 {
+      margin: 0 0 6px;
+    }
+
+    .hint {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
     .q12-note {
       padding: 10px;
       border: 1px solid var(--line);
       border-radius: 10px;
       background: #f8fafc;
     }
+
     .submit-progress {
       margin-top: 12px;
       padding: 10px 12px;
@@ -288,13 +364,18 @@
       border-radius: 12px;
       background: #fcfbff;
     }
-    .submit-progress[hidden] { display: none; }
+
+    .submit-progress[hidden] {
+      display: none;
+    }
+
     .submit-progress p {
       margin: 0 0 8px;
       font-size: 0.9rem;
       color: var(--ink-muted);
       font-weight: 600;
     }
+
     .submit-progress-bar {
       width: 100%;
       height: 10px;
@@ -302,37 +383,52 @@
       background: #eee8ff;
       overflow: hidden;
     }
+
     .submit-progress-fill {
       width: 0%;
       height: 100%;
       background: linear-gradient(130deg, var(--brand-deep), var(--brand));
       transition: width .25s ease;
     }
+
     @media (max-width: 760px) {
-      .grid, .two-col { grid-template-columns: 1fr; }
-      .vocab-choice-grid { grid-template-columns: 1fr; }
-      .wrap { padding: 14px; }
+
+      .grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .vocab-choice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        padding: 14px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <section class="hero">
       <h1>Pre-screening Experiments / 预筛选实验</h1>
       <p>本页面题目分为两部分：汉语学习背景信息 + 双字词判断（是/否）。</p>
-      <p>Scoring rule: vocabulary section total 60 points; score <strong>greater than 25</strong> is considered passed.</p>
-      <div class="progress-box"><div id="progressBar" class="progress"></div></div>
+      <p>Scoring rule: vocabulary section total 60 points; score <strong>greater than 25</strong> is considered passed.
+      </p>
+      <div class="progress-box">
+        <div id="progressBar" class="progress"></div>
+      </div>
       <p id="progressText" style="margin:8px 0 0;font-size:0.9rem;">0 / 74 answered</p>
     </section>
 
     <section class="panel">
       <h2>自动上传设置 / Auto Upload Destination</h2>
-      <p class="tip">上传地址已固定为研究团队 Webhook，无需手动配置。</p>
       <div class="actions">
         <button id="retryUploadBtn" class="btn btn-light" type="button">重传失败记录 / Retry Pending Uploads</button>
       </div>
-      <p class="tip">提交答卷时会自动上传；若网络失败会先本地排队，之后可点击“重传失败记录”。</p>
-      <p id="uploadStatus" class="upload-status">上传状态：固定上传地址已启用。</p>
+      <p class="tip">提交答卷时会自动上传;若网络失败会先本地排队，之后可点击“重传失败记录”。</p>
+      <p id="uploadStatus" class="upload-status" hidden></p>
     </section>
 
     <form id="quizForm" class="panel">
@@ -346,7 +442,8 @@
       <div class="q" data-bg="2">
         <h3>2. E-mail (邮箱) <span class="hint">*</span></h3>
         <input name="q2_email" type="email" required />
-        <label class="field" for="q2_payment_method" style="margin-top:10px;">Payment 收款方式 <span class="hint">*</span></label>
+        <label class="field" for="q2_payment_method" style="margin-top:10px;">Payment 收款方式 <span
+            class="hint">*</span></label>
         <select id="q2_payment_method" name="q2_payment_method" required>
           <option value="">请选择 / Select</option>
           <option value="微信">微信</option>
@@ -355,7 +452,8 @@
           <option value="Apple Pay">Apple Pay</option>
         </select>
         <label class="field" for="q2_payment_account" style="margin-top:10px;">收款账号 <span class="hint">*</span></label>
-        <input id="q2_payment_account" name="q2_payment_account" placeholder="请输入收款账号 / Enter payment account" required />
+        <input id="q2_payment_account" name="q2_payment_account" placeholder="请输入收款账号 / Enter payment account"
+          required />
       </div>
 
       <div class="q" data-bg="3">
@@ -389,39 +487,55 @@
       </div>
 
       <div class="q" data-bg="8">
-        <h3>8. Total length of Chinese learning (excluding interruptions) | 累计学习汉语的时长 (不含中断时间) <span class="hint">*</span></h3>
-        <label class="opt"><input type="radio" name="q8_learning_length" value="Less than 1 year (少于 1 年)" required />Less than 1 year (少于 1 年)</label>
-        <label class="opt"><input type="radio" name="q8_learning_length" value="1–2 years (1–2 年)" />1–2 years (1–2 年)</label>
-        <label class="opt"><input type="radio" name="q8_learning_length" value="2–4 years (2–4 年)" />2–4 years (2–4 年)</label>
-        <label class="opt"><input type="radio" name="q8_learning_length" value="4–6 years (4–6 年)" />4–6 years (4–6 年)</label>
-        <label class="opt"><input type="radio" name="q8_learning_length" value="More than 6 years (6 年以上)" />More than 6 years (6 年以上)</label>
+        <h3>8. Total length of Chinese learning (excluding interruptions) | 累计学习汉语的时长 (不含中断时间) <span
+            class="hint">*</span></h3>
+        <label class="opt"><input type="radio" name="q8_learning_length" value="Less than 1 year (少于 1 年)"
+            required />Less than 1 year (少于 1 年)</label>
+        <label class="opt"><input type="radio" name="q8_learning_length" value="1–2 years (1–2 年)" />1–2 years (1–2
+          年)</label>
+        <label class="opt"><input type="radio" name="q8_learning_length" value="2–4 years (2–4 年)" />2–4 years (2–4
+          年)</label>
+        <label class="opt"><input type="radio" name="q8_learning_length" value="4–6 years (4–6 年)" />4–6 years (4–6
+          年)</label>
+        <label class="opt"><input type="radio" name="q8_learning_length" value="More than 6 years (6 年以上)" />More than 6
+          years (6 年以上)</label>
       </div>
 
       <div class="q" data-bg="9">
         <h3>9. Main learning contexts (multiple answers allowed) | 学习汉语的主要方式或场所 (可多选) <span class="hint">*</span></h3>
-        <label class="opt"><input type="checkbox" name="q9_contexts" value="University in home country (本国高校)" />University in home country (本国高校)</label>
-        <label class="opt"><input type="checkbox" name="q9_contexts" value="University in China (中国高校)" />University in China (中国高校)</label>
-        <label class="opt"><input type="checkbox" name="q9_contexts" value="Language institute (语言培训机构)" />Language institute (语言培训机构)</label>
-        <label class="opt"><input type="checkbox" name="q9_contexts" value="Online courses (线上课程)" />Online courses (线上课程)</label>
+        <label class="opt"><input type="checkbox" name="q9_contexts"
+            value="University in home country (本国高校)" />University in home country (本国高校)</label>
+        <label class="opt"><input type="checkbox" name="q9_contexts" value="University in China (中国高校)" />University in
+          China (中国高校)</label>
+        <label class="opt"><input type="checkbox" name="q9_contexts" value="Language institute (语言培训机构)" />Language
+          institute (语言培训机构)</label>
+        <label class="opt"><input type="checkbox" name="q9_contexts" value="Online courses (线上课程)" />Online courses
+          (线上课程)</label>
         <label class="opt"><input type="checkbox" name="q9_contexts" value="Self-study (自学)" />Self-study (自学)</label>
-        <label class="opt"><input type="checkbox" id="q9_other_chk" name="q9_contexts" value="Other (其他)" />Other (其他)</label>
+        <label class="opt"><input type="checkbox" id="q9_other_chk" name="q9_contexts" value="Other (其他)" />Other
+          (其他)</label>
         <label class="field" for="q9_other" style="margin-top:10px;">Other details (其他说明)</label>
         <input id="q9_other" name="q9_other" placeholder="Optional" />
       </div>
 
       <div class="q" data-bg="10">
         <h3>10. Current Chinese proficiency (self-rated) | 目前的汉语水平 (自评) <span class="hint">*</span></h3>
-        <label class="opt"><input type="radio" name="q10_proficiency" value="Beginner (初级入门)" required />Beginner (初级入门)</label>
+        <label class="opt"><input type="radio" name="q10_proficiency" value="Beginner (初级入门)" required />Beginner
+          (初级入门)</label>
         <label class="opt"><input type="radio" name="q10_proficiency" value="Elementary (基础)" />Elementary (基础)</label>
-        <label class="opt"><input type="radio" name="q10_proficiency" value="Intermediate (中级)" />Intermediate (中级)</label>
+        <label class="opt"><input type="radio" name="q10_proficiency" value="Intermediate (中级)" />Intermediate
+          (中级)</label>
         <label class="opt"><input type="radio" name="q10_proficiency" value="Advanced (高级)" />Advanced (高级)</label>
-        <label class="opt"><input type="radio" name="q10_proficiency" value="Proficient (精通级)" />Proficient (精通级)</label>
-        <label class="opt"><input type="radio" name="q10_proficiency" value="Near-native (接近母语水平)" />Near-native (接近母语水平)</label>
+        <label class="opt"><input type="radio" name="q10_proficiency" value="Proficient (精通级)" />Proficient
+          (精通级)</label>
+        <label class="opt"><input type="radio" name="q10_proficiency" value="Near-native (接近母语水平)" />Near-native
+          (接近母语水平)</label>
       </div>
 
       <div class="q" data-bg="11">
         <h3>11. Highest HSK level obtained (已获得的最高HSK等级) <span class="hint">*</span></h3>
-        <label class="opt"><input type="radio" name="q11_hsk" value="Never taken (未参加过)" required />Never taken (未参加过)</label>
+        <label class="opt"><input type="radio" name="q11_hsk" value="Never taken (未参加过)" required />Never taken
+          (未参加过)</label>
         <label class="opt"><input type="radio" name="q11_hsk" value="HSK 1" />HSK 1</label>
         <label class="opt"><input type="radio" name="q11_hsk" value="HSK 2" />HSK 2</label>
         <label class="opt"><input type="radio" name="q11_hsk" value="HSK 3" />HSK 3</label>
@@ -431,11 +545,14 @@
       </div>
 
       <div class="q" data-bg="12">
-        <h3>12. Please upload your Chinese proficiency certificate, ideally the HSK (请上传您的汉语水平证书，最好是HSK证书) <span class="hint">*</span></h3>
+        <h3>12. Please upload your Chinese proficiency certificate, ideally the HSK (请上传您的汉语水平证书，最好是HSK证书) <span
+            class="hint">*</span></h3>
         <div class="q12-note">
           <p class="hint" style="margin:0 0 8px;">由于 Google Sheet 文件大小限制，本页面不支持直接上传文件。</p>
-          <label class="opt"><input type="checkbox" name="q12_send_by_email" value="yes" />我将通过邮件附件发送证书 / I will send the certificate as an email attachment</label>
-          <label class="field" for="q12_certificate_url" style="margin-top:8px;">或填写可访问的在线地址 / Or provide an accessible URL</label>
+          <label class="opt"><input type="checkbox" name="q12_send_by_email" value="yes" />我将通过邮件附件发送证书 / I will send
+            the certificate as an email attachment</label>
+          <label class="field" for="q12_certificate_url" style="margin-top:8px;">或填写可访问的在线地址 / Or provide an accessible
+            URL</label>
           <input id="q12_certificate_url" name="q12_certificate_url" placeholder="https://..." />
           <p class="hint" style="margin:8px 0 0;">第12题要求：至少满足一种方式（邮件附件 或 在线地址）。</p>
         </div>
@@ -448,9 +565,11 @@
 
       <div class="q" data-bg="14">
         <h3>14. Primary motivation for learning Chinese (学习汉语的主要动机) <span class="hint">*</span></h3>
-        <label class="opt"><input type="radio" name="q14_motivation" value="Academic (学业)" required />Academic (学业)</label>
+        <label class="opt"><input type="radio" name="q14_motivation" value="Academic (学业)" required />Academic
+          (学业)</label>
         <label class="opt"><input type="radio" name="q14_motivation" value="Work (工作)" />Work (工作)</label>
-        <label class="opt"><input type="radio" name="q14_motivation" value="Personal interest (个人兴趣)" />Personal interest (个人兴趣)</label>
+        <label class="opt"><input type="radio" name="q14_motivation" value="Personal interest (个人兴趣)" />Personal
+          interest (个人兴趣)</label>
         <label class="opt"><input type="radio" name="q14_motivation" value="Other (其他)" />Other (其他)</label>
       </div>
 
@@ -547,6 +666,7 @@
     function setUploadStatus(message, type = "") {
       uploadStatus.className = `upload-status ${type}`.trim();
       uploadStatus.textContent = message;
+      uploadStatus.hidden = !message;
     }
 
     function getQueue() {
@@ -785,26 +905,26 @@
         if (q12Url) q12Methods.push(`Online URL / 在线地址: ${q12Url}`);
 
         const candidate = {
-        name: form.q1_name.value.trim(),
-        email: form.q2_email.value.trim(),
-        paymentMethod: form.q2_payment_method.value.trim(),
-        paymentAccount: form.q2_payment_account.value.trim(),
-        age: form.q3_age.value.trim(),
-        gender: form.querySelector('input[name="q4_gender"]:checked').value,
-        nationality: form.q5_nationality.value.trim(),
-        nativeLanguages: form.q6_native_languages.value.trim(),
-        beenToChina: form.querySelector('input[name="q7_been_china"]:checked').value,
-        chinaVisitDetail: form.q7_detail.value.trim(),
-        learningLength: form.querySelector('input[name="q8_learning_length"]:checked').value,
-        learningContexts: Array.from(form.querySelectorAll('input[name="q9_contexts"]:checked')).map((el) => el.value),
-        learningContextsOther: form.q9_other.value.trim(),
-        proficiency: form.querySelector('input[name="q10_proficiency"]:checked').value,
-        highestHSK: form.querySelector('input[name="q11_hsk"]:checked').value,
-        certificateInfo: q12Methods.join(" | "),
-        latestHSKDate: form.q13_hsk_date.value.trim(),
-        motivation: form.querySelector('input[name="q14_motivation"]:checked').value,
-        wechat: ""
-      };
+          name: form.q1_name.value.trim(),
+          email: form.q2_email.value.trim(),
+          paymentMethod: form.q2_payment_method.value.trim(),
+          paymentAccount: form.q2_payment_account.value.trim(),
+          age: form.q3_age.value.trim(),
+          gender: form.querySelector('input[name="q4_gender"]:checked').value,
+          nationality: form.q5_nationality.value.trim(),
+          nativeLanguages: form.q6_native_languages.value.trim(),
+          beenToChina: form.querySelector('input[name="q7_been_china"]:checked').value,
+          chinaVisitDetail: form.q7_detail.value.trim(),
+          learningLength: form.querySelector('input[name="q8_learning_length"]:checked').value,
+          learningContexts: Array.from(form.querySelectorAll('input[name="q9_contexts"]:checked')).map((el) => el.value),
+          learningContextsOther: form.q9_other.value.trim(),
+          proficiency: form.querySelector('input[name="q10_proficiency"]:checked').value,
+          highestHSK: form.querySelector('input[name="q11_hsk"]:checked').value,
+          certificateInfo: q12Methods.join(" | "),
+          latestHSKDate: form.q13_hsk_date.value.trim(),
+          motivation: form.querySelector('input[name="q14_motivation"]:checked').value,
+          wechat: ""
+        };
 
         const vocabAnswers = [];
         let correctCount = 0;
@@ -876,44 +996,44 @@
           : `Pre-screening FAILED | ${candidate.name} | Score ${score}/${total}`;
 
         const bgLines = [
-        `Q1 Name: ${candidate.name}`,
-        `Q2 Email: ${candidate.email}`,
-        `Q2 Payment method: ${candidate.paymentMethod}`,
-        `Q2 Payment account: ${candidate.paymentAccount}`,
-        `Q3 Age: ${candidate.age}`,
-        `Q4 Gender: ${candidate.gender}`,
-        `Q5 Nationality: ${candidate.nationality}`,
-        `Q6 Native languages: ${candidate.nativeLanguages}`,
-        `Q7 Been to China: ${candidate.beenToChina}`,
-        `Q7 Detail: ${candidate.chinaVisitDetail || "N/A"}`,
-        `Q8 Learning length: ${candidate.learningLength}`,
-        `Q9 Contexts: ${candidate.learningContexts.join("; ")}${candidate.learningContextsOther ? ` | Other: ${candidate.learningContextsOther}` : ""}`,
-        `Q10 Proficiency: ${candidate.proficiency}`,
-        `Q11 Highest HSK: ${candidate.highestHSK}`,
-        `Q12 Certificate info: ${candidate.certificateInfo || "N/A"}`,
-        `Q13 Latest passed HSK date: ${candidate.latestHSKDate || "N/A"}`,
-        `Q14 Motivation: ${candidate.motivation}`
-      ].join("\n");
+          `Q1 Name: ${candidate.name}`,
+          `Q2 Email: ${candidate.email}`,
+          `Q2 Payment method: ${candidate.paymentMethod}`,
+          `Q2 Payment account: ${candidate.paymentAccount}`,
+          `Q3 Age: ${candidate.age}`,
+          `Q4 Gender: ${candidate.gender}`,
+          `Q5 Nationality: ${candidate.nationality}`,
+          `Q6 Native languages: ${candidate.nativeLanguages}`,
+          `Q7 Been to China: ${candidate.beenToChina}`,
+          `Q7 Detail: ${candidate.chinaVisitDetail || "N/A"}`,
+          `Q8 Learning length: ${candidate.learningLength}`,
+          `Q9 Contexts: ${candidate.learningContexts.join("; ")}${candidate.learningContextsOther ? ` | Other: ${candidate.learningContextsOther}` : ""}`,
+          `Q10 Proficiency: ${candidate.proficiency}`,
+          `Q11 Highest HSK: ${candidate.highestHSK}`,
+          `Q12 Certificate info: ${candidate.certificateInfo || "N/A"}`,
+          `Q13 Latest passed HSK date: ${candidate.latestHSKDate || "N/A"}`,
+          `Q14 Motivation: ${candidate.motivation}`
+        ].join("\n");
 
         const answerLines = vocabAnswers
           .map((a) => `Q${a.question} ${a.word}: chosen=${a.chosen}, correct=${a.correct}, result=${a.isCorrect ? "correct" : "wrong"}`)
           .join("\n");
 
         const mailBody = [
-        "Pre-screening Result",
-        "-------------------",
-        `Status: ${passed ? "PASSED" : "FAILED"}`,
-        `Score: ${score}/${total}`,
-        `Rule: score > ${PASS_SCORE} means pass.`,
-        "",
-        "Background Information",
-        bgLines,
-        "",
-        "Vocabulary Answers",
-        answerLines,
-        "",
-        `Submitted At: ${resultData.submittedAt}`
-      ].join("\n");
+          "Pre-screening Result",
+          "-------------------",
+          `Status: ${passed ? "PASSED" : "FAILED"}`,
+          `Score: ${score}/${total}`,
+          `Rule: score > ${PASS_SCORE} means pass.`,
+          "",
+          "Background Information",
+          bgLines,
+          "",
+          "Vocabulary Answers",
+          answerLines,
+          "",
+          `Submitted At: ${resultData.submittedAt}`
+        ].join("\n");
 
         sendEmailBtn.href = `mailto:liuhuanpsylanguage@foxmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
 
@@ -958,4 +1078,5 @@
     refreshGeneralOptionStyles();
   </script>
 </body>
+
 </html>
