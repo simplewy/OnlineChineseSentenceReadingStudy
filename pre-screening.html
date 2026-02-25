@@ -632,17 +632,20 @@
       <p class="tip"
         style="color: #d9534f; background: #fdf7f7; padding: 10px; border-radius: 4px; border-left: 5px solid #d9534f;">
         <strong>IMPORTANT:</strong> To avoid data loss due to potential network issues, please also click
-        <strong>"Send Result via Email"</strong> to send your results manually. This step is <strong>essential</strong>
-        to ensure your participation is valid.
+        <strong>"Send Result via Email"</strong> or <strong>"Save as File"</strong> to send your results manually. This
+        step is <strong>essential</strong> to ensure your participation is valid.
         <br><br>
-        <strong>重要提示：</strong>为保障实验有效性，提交后请务必点击<strong>“通过邮箱发送结果”</strong>手动发送数据备份，以防止自动上传失效。
+        <strong>重要提示：</strong>为保障实验有效性，提交后请务必点击<strong>“通过邮箱发送结果”</strong>或<strong>“保存为文件”</strong>手动发送数据备份，以防止自动上传失效。
       </p>
 
       <div id="resultBox" class="result" hidden>
         <h3 id="resultTitle"></h3>
         <p id="resultText"></p>
-        <div class="actions">
+        <div class="actions" style="flex-wrap: wrap; gap: 10px;">
           <a id="sendEmailBtn" class="btn btn-primary" href="#">通过邮箱发送结果 / Send Result via Email</a>
+          <button id="saveFileBtn" class="btn btn-primary" type="button"
+            style="background-color: #28a745; border-color: #28a745;">保存为文件 (稍后手动发送) / Save as File (Send Manually
+            Later)</button>
           <a id="nextBtn" class="btn btn-light" href="./index.html">返回主页面 / Back to Main Page</a>
         </div>
       </div>
@@ -673,6 +676,7 @@
     const resultTitle = document.getElementById("resultTitle");
     const resultText = document.getElementById("resultText");
     const sendEmailBtn = document.getElementById("sendEmailBtn");
+    const saveFileBtn = document.getElementById("saveFileBtn");
     const nextBtn = document.getElementById("nextBtn");
     const retryUploadBtn = document.getElementById("retryUploadBtn");
     const uploadStatus = document.getElementById("uploadStatus");
@@ -688,6 +692,42 @@
     const BACKGROUND_PROGRESS_TOTAL = 14;
     const UPLOAD_QUEUE_KEY = "preScreenUploadQueue";
     const FIXED_UPLOAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbznGbiTo1433zPLbHKUtsJnrmsjpcB0-uZAgKQd3wagPpY3PFVFzRurokxdLzDnOmviMQ/exec";
+
+    let currentMailInfo = { subject: "", body: "", name: "" };
+
+    function downloadAsFile(text, filename) {
+      const blob = new Blob([text], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    sendEmailBtn.addEventListener("click", (e) => {
+      let focusLost = false;
+      const onBlur = () => { focusLost = true; };
+      window.addEventListener("blur", onBlur);
+
+      setTimeout(() => {
+        window.removeEventListener("blur", onBlur);
+        if (!focusLost) {
+          const msg = "It seems no email client is configured on your computer.\n\nWould you like to save the results as a text file? You can then manually send this file to: liuhuanpsylanguage@foxmail.com\n\n系统未检测到可用的邮箱应用。是否将结果保存为文件，以便您手动发送至 liuhuanpsylanguage@foxmail.com？";
+          if (confirm(msg)) {
+            const fileName = `PreScreen_${currentMailInfo.name || "Participant"}_${new Date().getTime()}.txt`;
+            downloadAsFile(currentMailInfo.body, fileName);
+          }
+        }
+      }, 2000);
+    });
+
+    saveFileBtn.addEventListener("click", () => {
+      const fileName = `PreScreen_${currentMailInfo.name || "Participant"}_${new Date().getTime()}.txt`;
+      downloadAsFile(currentMailInfo.body, fileName);
+    });
 
     function renderVocabQuestions() {
       vocabQuestionsEl.innerHTML = VOCAB_WORDS.map((word, idx) => {
@@ -1089,6 +1129,12 @@
           "",
           `Submitted At: ${resultData.submittedAt}`
         ].join("\n");
+
+        currentMailInfo = {
+          subject: mailSubject,
+          body: mailBody,
+          name: candidate.name
+        };
 
         sendEmailBtn.href = `mailto:liuhuanpsylanguage@foxmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
 
