@@ -1034,20 +1034,19 @@
         const score = correctCount;
         const total = TOTAL_QUESTIONS;
 
-        // Pass conditions: Score > 25, HSK 3-6, and Native language is English
+        // Pass conditions: Score > 25 AND Native language is English
         const scorePassed = score > PASS_SCORE;
-        const hskPassed = ["HSK 3", "HSK 4", "HSK 5", "HSK 6"].includes(candidate.highestHSK);
         const langLower = candidate.nativeLanguages.toLowerCase();
         const langPassed = langLower.includes("english") || langLower.includes("英语");
 
-        const passed = scorePassed && hskPassed && langPassed;
+        const passed = scorePassed && langPassed;
 
         const submittedAt = getBeijingTimestamp();
         const uploadPayload = {
           status: passed ? "pass" : "fail",
           score,
           total,
-          passThreshold: `Score>${PASS_SCORE}, HSK>2, Native=English`,
+          passThreshold: `Score>${PASS_SCORE}, Native=English`,
           candidate,
           answers: vocabAnswers,
           submittedAt
