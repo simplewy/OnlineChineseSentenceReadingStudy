@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Online Chinese Sentence Reading Study by Native English Speakers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
       --bg: #f8fafc;
@@ -28,8 +31,13 @@
       --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
     }
 
-    * { box-sizing: border-box; }
-    [hidden] { display: none !important; }
+    * {
+      box-sizing: border-box;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
 
     body {
       margin: 0;
@@ -46,7 +54,7 @@
     .bg-grid {
       position: fixed;
       inset: 0;
-      background-image: linear-gradient(to right, rgba(30,41,59,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(30,41,59,0.02) 1px, transparent 1px);
+      background-image: linear-gradient(to right, rgba(30, 41, 59, 0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(30, 41, 59, 0.02) 1px, transparent 1px);
       background-size: 44px 44px;
       mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
       opacity: .45;
@@ -80,7 +88,9 @@
       font-size: 1rem;
     }
 
-    .brand b { color: var(--brand); }
+    .brand b {
+      color: var(--brand);
+    }
 
     .lang-btn {
       border: 1px solid var(--line);
@@ -96,8 +106,17 @@
       align-items: center;
       gap: 6px;
     }
-    .lang-btn:hover { background: var(--brand-deep); color: #fff; transform: translateY(-1px); }
-    .lang-icon { font-size: 14px; line-height: 1; }
+
+    .lang-btn:hover {
+      background: var(--brand-deep);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .lang-icon {
+      font-size: 14px;
+      line-height: 1;
+    }
 
     .hero {
       margin-top: 26px;
@@ -121,6 +140,7 @@
       background: rgba(255, 255, 255, 0.12);
       filter: blur(6px);
     }
+
     .hero::before {
       content: "";
       position: absolute;
@@ -141,8 +161,8 @@
     }
 
     .tag {
-      border: 1px solid rgba(255,255,255,0.26);
-      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      background: rgba(255, 255, 255, 0.14);
       border-radius: 999px;
       padding: 5px 10px;
       font-size: 12px;
@@ -179,7 +199,9 @@
       color: var(--brand-deep);
     }
 
-    .muted { color: var(--ink-muted); }
+    .muted {
+      color: var(--ink-muted);
+    }
 
     .flow {
       display: grid;
@@ -229,7 +251,9 @@
       transition: transform .18s ease, box-shadow .18s ease;
     }
 
-    .btn:hover { transform: translateY(-1px); }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
 
     .btn-primary {
       color: #fff;
@@ -253,11 +277,11 @@
     .money {
       background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand-700) 100%);
       color: #fff;
-      border: 1px solid rgba(255,255,255,0.22);
+      border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 18px;
       padding: 16px;
       min-height: 145px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
     }
 
     .money strong {
@@ -325,14 +349,21 @@
       margin-top: 14px;
     }
 
-    ol { margin: 10px 0 0 18px; padding: 0; }
-    ul { margin: 10px 0 0 18px; padding: 0; }
+    ol {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
 
     .video {
       width: 100%;
       border-radius: 14px;
       border: 1px solid var(--line);
-      box-shadow: 0 10px 26px rgba(37,52,76,0.12);
+      box-shadow: 0 10px 26px rgba(37, 52, 76, 0.12);
     }
 
     .contact-grid {
@@ -365,12 +396,17 @@
       color: var(--ink-muted);
       font-size: .92rem;
     }
+
     .footer a {
       color: var(--brand-deep);
       text-decoration: none;
       font-weight: 600;
     }
-    .footer a:hover { text-decoration: underline; }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
     .status-line {
       margin-top: 10px;
       padding: 10px 12px;
@@ -378,31 +414,37 @@
       font-size: 13px;
       font-weight: 600;
     }
+
     .status-neutral {
       background: #f8fafc;
       color: #475569;
       border: 1px solid #e2e8f0;
     }
+
     .status-pass {
       background: #ecfdf3;
       color: #166534;
       border: 1px solid #bbf7d0;
     }
+
     .status-fail {
       background: #fef2f2;
       color: #991b1b;
       border: 1px solid #fecaca;
     }
+
     .step3-locked {
       opacity: 0.5;
       filter: grayscale(0.2);
     }
+
     .step3-locked a,
     .step3-locked button,
     .step3-locked video {
       pointer-events: none;
       cursor: not-allowed;
     }
+
     .lock-note {
       margin-top: 12px;
       background: #fff7ed;
@@ -414,23 +456,110 @@
       font-weight: 600;
     }
 
+    .lock-note-info {
+      margin-top: 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .skip-section {
+      margin-top: 14px;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 14px;
+    }
+
+    .skip-section .skip-label {
+      font-size: 12px;
+      color: var(--ink-muted);
+      margin-bottom: 8px;
+    }
+
+    .btn-skip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 13px;
+      border: 1px solid #e2e8f0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      color: #64748b;
+      cursor: pointer;
+      transition: all .22s ease;
+      line-height: 1.4;
+    }
+
+    .btn-skip .skip-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .btn-skip:hover {
+      background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+      border-color: #fdba74;
+      color: #9a3412;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px -4px rgba(251, 146, 60, 0.18);
+    }
+
     @media (max-width: 940px) {
-      .flow { grid-template-columns: 1fr; }
-      .grid-4 { grid-template-columns: repeat(2, 1fr); }
-      .split { grid-template-columns: 1fr; }
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 680px) {
-      .shell { padding: 0 14px 52px; }
-      .nav { margin: 0 -14px; padding: 12px 14px; }
-      .hero { padding: 24px 18px; border-radius: 20px; }
-      .panel { padding: 18px; border-radius: 16px; }
-      .grid-4, .exp-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; justify-items: center; }
-      .btn { width: 100%; }
+      .shell {
+        padding: 0 14px 52px;
+      }
+
+      .nav {
+        margin: 0 -14px;
+        padding: 12px 14px;
+      }
+
+      .hero {
+        padding: 24px 18px;
+        border-radius: 20px;
+      }
+
+      .panel {
+        padding: 18px;
+        border-radius: 16px;
+      }
+
+      .grid-4,
+      .exp-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="bg-grid"></div>
   <div class="shell">
@@ -446,34 +575,44 @@
       <div class="tag-row">
         <span class="tag" data-lang="en">School of English Studies, BISU</span>
         <span class="tag" data-lang="zh">北京第二外国语学院英语学院</span>
-        <span class="tag" data-lang="en">Online • Mobile Friendly</span>
-        <span class="tag" data-lang="zh">全程在线 • 手机/电脑适配</span>
+        <span class="tag" data-lang="en">Online</span>
+        <span class="tag" data-lang="zh">全程在线</span>
       </div>
 
       <h1 data-lang="en">Online Chinese Sentence Reading Study by Native English Speakers</h1>
       <h1 data-lang="zh">英语母语者在线中文句子阅读研究</h1>
 
-      <p data-lang="en">This unified page includes both study information and participation instructions: complete Step 2 pre-screening first, then continue to Step 3 main experiments if eligible.</p>
+      <p data-lang="en">This unified page includes both study information and participation instructions: complete Step
+        2 pre-screening first, then continue to Step 3 main experiments if eligible.</p>
       <p data-lang="zh">本页面整合了研究说明与参与指引：请先完成步骤2预筛选，符合条件后再进入步骤3正式实验。</p>
     </section>
 
     <section class="panel">
       <h2 class="section-title" data-lang="en">About the Study</h2>
       <h2 class="section-title" data-lang="zh">研究简介</h2>
-      <p data-lang="en">Welcome to our online study. We are an academic research team from School of English Studies, Beijing International Studies University. This research investigates how native English speakers comprehend and process Chinese sentences. Your participation will support high-impact publications and advance linguistic research and international Chinese education.</p>
-      <p data-lang="zh">欢迎参与我们的在线研究。我们是来自北京第二外国语学院英语学院的学术研究团队。本研究旨在探讨英语母语者如何理解和处理中文句子。您的参与将支持高影响力的学术发表，并推动语言学研究和国际中文教育的发展。</p>
+      <p data-lang="en">Welcome to our online study. We are an academic research team from School of English Studies,
+        Beijing International Studies University. This research investigates how native English speakers comprehend and
+        process Chinese sentences. Your participation will support high-impact publications and advance linguistic
+        research and international Chinese education.</p>
+      <p data-lang="zh">
+        欢迎参与我们的在线研究。我们是来自北京第二外国语学院英语学院的学术研究团队。本研究旨在探讨英语母语者如何理解和处理中文句子。您的参与将支持高影响力的学术发表，并推动语言学研究和国际中文教育的发展。</p>
       <p data-lang="en"><strong>Funding:</strong> National Social Science Fund of China</p>
       <p data-lang="zh"><strong>资助单位：</strong>国家社会科学基金</p>
       <p data-lang="en"><strong>Investigators:</strong> Prof. Changyin Zhou &amp; Dr. Huan Liu</p>
       <p data-lang="zh"><strong>研究人员：</strong>周长银教授 &amp; 刘欢博士</p>
-      <p data-lang="en"><strong>Contact for Queries:</strong> <a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">WeChat: LH15122773753</a></p>
-      <p data-lang="zh"><strong>联系邮箱：</strong><a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">微信：LH15122773753</a></p>
+      <p data-lang="en"><strong>Contact for Queries:</strong> <a
+          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">WeChat:
+          LH15122773753</a></p>
+      <p data-lang="zh"><strong>联系邮箱：</strong><a
+          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a
+          href="#wechat-qr">微信：LH15122773753</a></p>
     </section>
 
     <section class="panel">
       <h2 class="section-title" data-lang="en">Participation Flow</h2>
       <h2 class="section-title" data-lang="zh">参与流程</h2>
-      <p class="muted" data-lang="en">Please follow the three-step process below to ensure valid participation and data submission.</p>
+      <p class="muted" data-lang="en">Please follow the three-step process below to ensure valid participation and data
+        submission.</p>
       <p class="muted" data-lang="zh">请按下方三步流程参与，以确保实验资格与数据提交有效。</p>
 
       <div class="flow">
@@ -497,15 +636,31 @@
           <div class="step" data-lang="zh">步骤 2</div>
           <h3 data-lang="en">Pre-screening Experiments</h3>
           <h3 data-lang="zh">预筛选实验</h3>
-          <p class="muted" data-lang="en">Complete pre-screening first. Only participants who pass can proceed to Step 3 main experiments.</p>
+          <p class="muted" data-lang="en">Complete pre-screening first. Only participants who pass can proceed to Step 3
+            main experiments.</p>
           <p class="muted" data-lang="zh">请先完成预筛选。仅通过预筛选的参与者可进入步骤3正式实验。</p>
           <p class="muted" data-lang="en">Estimated time: about 5 minutes.</p>
           <p class="muted" data-lang="zh">预计用时：约5分钟。</p>
           <div class="btn-row">
-            <a id="preScreenBtn" class="btn btn-primary" href="./pre-screening.html" target="_blank" rel="noopener">Pre-screening Experiments</a>
+            <a id="preScreenBtn" class="btn btn-primary" href="./pre-screening.html" target="_blank"
+              rel="noopener">Pre-screening Experiments</a>
           </div>
-          <p id="pretestStatusEn" class="status-line status-neutral" data-lang="en">Pre-screening status: Not completed yet.</p>
-          <p id="pretestStatusZh" class="status-line status-neutral" data-lang="zh">预筛选状态：尚未完成。</p>
+          <p id="pretestStatusEn" class="status-line status-neutral" data-lang="en">Pre-screening status: Not completed
+            yet.</p>
+          <p id="pretestStatusZh" class="status-line status-neutral" data-lang="zh">
+            &#x9884;&#x7B5B;&#x9009;&#x72B6;&#x6001;&#xFF1A;&#x5C1A;&#x672A;&#x5B8C;&#x6210;&#x3002;</p>
+          <div class="skip-section" data-lang="en">
+            <div class="skip-label">Already passed pre-screening elsewhere?</div>
+            <button id="skipPreScreenBtnEn" class="btn-skip" type="button"><span class="skip-icon">&#x1F6AA;</span> Skip
+              Pre-screening &amp; Go to Step 3</button>
+          </div>
+          <div class="skip-section" data-lang="zh">
+            <div class="skip-label">
+              &#x5DF2;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#x9884;&#x5B9E;&#x9A8C;&#xFF1F;
+            </div>
+            <button id="skipPreScreenBtnZh" class="btn-skip" type="button"><span class="skip-icon">&#x1F6AA;</span>
+              &#x8DF3;&#x8FC7;&#x9884;&#x5B9E;&#x9A8C;&#xFF0C;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x6B65;&#x9AA4;3</button>
+          </div>
         </article>
 
         <article class="card">
@@ -513,7 +668,9 @@
           <div class="step" data-lang="zh">步骤 3</div>
           <h3 data-lang="en">Main Study Modules</h3>
           <h3 data-lang="zh">正式实验模块</h3>
-          <p class="muted" data-lang="en">The main study consists of four experiments. The six subsections below guide you through task scope, task outline, compensation, experiment access, data submission, and key guidelines.</p>
+          <p class="muted" data-lang="en">The main study consists of four experiments. The six subsections below guide
+            you through task scope, task outline, compensation, experiment access, data submission, and key guidelines.
+          </p>
           <p class="muted" data-lang="zh">正式实验模块由4个实验组成，以下6个小节将指引您进行实验：任务范围、任务说明、报酬标准、实验入口、数据提交与关键注意事项。</p>
         </article>
       </div>
@@ -522,10 +679,15 @@
     <section class="panel" id="step3-section">
       <h2 class="section-title" data-lang="en">Step 3: Main Study Modules</h2>
       <h2 class="section-title" data-lang="zh">步骤3：正式实验模块</h2>
-      <p class="muted" data-lang="en">This stage contains four experiments. The six subsections below provide the complete guidance for participation.</p>
+      <p class="muted" data-lang="en">This stage contains four experiments. The six subsections below provide the
+        complete guidance for participation.</p>
       <p class="muted" data-lang="zh">本阶段包含4个实验，以下6个小节提供完整参与指引。</p>
-      <p id="step3LockEn" class="lock-note" data-lang="en" hidden>Step 3 is currently locked because pre-screening score is below 25. You are not eligible for Experiment 3 this round.</p>
+      <p id="step3LockEn" class="lock-note" data-lang="en" hidden>Step 3 is currently locked because pre-screening score
+        is below 25. You are not eligible for Experiment 3 this round.</p>
       <p id="step3LockZh" class="lock-note" data-lang="zh" hidden>当前预筛选得分低于25分，步骤3已锁定。本轮无法参与实验3，欢迎后续参与其他实验。</p>
+      <p id="step3NoneEn" class="lock-note-info" data-lang="en" hidden>&#x1F512; Step 3 is locked. Please complete Step
+        2 pre-screening first and pass the test before accessing the main experiments.</p>
+      <p id="step3NoneZh" class="lock-note-info" data-lang="zh" hidden>&#x1F512; 步骤3已锁定。请先完成步骤2的预筛选测试并通过，才能进入正式实验。</p>
 
       <article class="card">
         <h3 data-lang="en">3.1 Participation Content</h3>
@@ -547,7 +709,8 @@
             <p class="muted" data-lang="en"><strong>Time and Task Composition</strong></p>
             <p class="muted" data-lang="zh"><strong>时间与任务构成</strong></p>
             <ol>
-              <li data-lang="en">Main reading task: about 50 minutes (Experiment 1/2), about 30 minutes (Experiment 3/4).</li>
+              <li data-lang="en">Main reading task: about 50 minutes (Experiment 1/2), about 30 minutes (Experiment
+                3/4).</li>
               <li data-lang="zh">主阅读任务：实验1/2约50分钟，实验3/4约30分钟。</li>
               <li data-lang="en">Working-memory test: about 20 minutes (Experiment 3/4 only).</li>
               <li data-lang="zh">工作记忆测试：约20分钟（仅实验3/4）。</li>
@@ -561,19 +724,21 @@
       <article class="card" style="margin-top:14px;">
         <h3 data-lang="en">3.2 Brief Outline of Tasks</h3>
         <h3 data-lang="zh">3.2 任务简要说明</h3>
-        <p class="muted" data-lang="en">Step 3 includes two task types: sentence reading and working-memory testing.</p>
-        <p class="muted" data-lang="zh">步骤3包含两类任务：句子阅读与工作记忆测试。</p>
+        <p class="muted" data-lang="en">Step 3 includes two task types: sentence reading and working-memory test. All
+          tasks are conducted online and require no software installation.</p>
+        <p class="muted" data-lang="zh">步骤3包含两类任务：句子阅读与工作记忆测试。所有任务均在线进行，无需安装软件。</p>
         <div class="split">
           <article class="card">
-            <h3 data-lang="en">b. Sentence Reading Task</h3>
-            <h3 data-lang="zh">b. 句子阅读任务</h3>
-            <p data-lang="en">Read each sentence at your own pace and answer Yes/No comprehension questions. The task is fully online and requires no software installation.</p>
-            <p data-lang="zh">您将按自定步调阅读句子，并回答是/否理解题。任务全程在线进行，无需安装软件。</p>
+            <h3 data-lang="en">a. Sentence Reading Task</h3>
+            <h3 data-lang="zh">a. 句子阅读任务</h3>
+            <p data-lang="en">Read each sentence at your own pace and answer Yes/No comprehension questions.</p>
+            <p data-lang="zh">您将按自定步调阅读句子，并回答是/否理解题。</p>
           </article>
           <article class="card">
-            <h3 data-lang="en">c. Working Memory</h3>
-            <h3 data-lang="zh">c. 工作记忆测试</h3>
-            <p data-lang="en">In Experiment 3/4, complete an Automated Operation Span Task: remember letter sequences while judging simple equations.</p>
+            <h3 data-lang="en">b. Working Memory</h3>
+            <h3 data-lang="zh">b. 工作记忆测试</h3>
+            <p data-lang="en">In Experiment 3/4, complete an Automated Operation Span Task: remember letter sequences
+              while judging simple equations.</p>
             <p data-lang="zh">在实验3/4中，您需完成自动化操作广度任务：在记忆字母序列的同时判断简单算式正误。</p>
           </article>
         </div>
@@ -582,7 +747,8 @@
       <article class="card" style="margin-top:14px;">
         <h3 data-lang="en">3.3 Compensation</h3>
         <h3 data-lang="zh">3.3 报酬标准</h3>
-        <p class="muted" data-lang="en">You can complete any number of experiments. Payment is based on how many you finish.</p>
+        <p class="muted" data-lang="en">You can complete any number of experiments. Payment is based on how many you
+          finish.</p>
         <p class="muted" data-lang="zh">您可参加任意数量的实验，报酬按完成数量发放。</p>
         <div class="grid-4">
           <article class="money">
@@ -615,9 +781,11 @@
       <article class="card" style="margin-top:14px;">
         <h3 data-lang="en">3.4 Main Experiment Links</h3>
         <h3 data-lang="zh">3.4 正式实验入口</h3>
-        <p class="muted" data-lang="en"><strong>Invitation note:</strong> If you have passed pre-screening, use the links below to enter the main experiments.</p>
+        <p class="muted" data-lang="en"><strong>Invitation note:</strong> If you have passed pre-screening, use the
+          links below to enter the main experiments.</p>
         <p class="muted" data-lang="zh"><strong>邀请说明：</strong>若您已通过预筛选，请使用下方链接进入正式实验。</p>
-        <p class="muted" data-lang="en">Experiment 1/2 are reading-only; Experiment 3/4 include reading plus memory testing.</p>
+        <p class="muted" data-lang="en">Experiment 1/2 are reading-only; Experiment 3/4 include reading plus memory
+          testing.</p>
         <p class="muted" data-lang="zh">实验1/2为阅读任务；实验3/4为阅读任务加记忆测试。</p>
         <div class="exp-grid">
           <a class="exp-link" href="https://farm.pcibex.net/p/JVDALo/" target="_blank" rel="noopener">
@@ -659,11 +827,14 @@
               <li data-lang="zh">在下一页点击 <b>Show data</b>。</li>
               <li data-lang="en">Copy the output rows and save them into an Excel file.</li>
               <li data-lang="zh">复制输出数据并保存到 Excel 文件。</li>
-              <li data-lang="en">Send the file to <a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>.</li>
-              <li data-lang="zh">将文件发送至 <a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</li>
+              <li data-lang="en">Send the file to <a
+                  href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>.</li>
+              <li data-lang="zh">将文件发送至 <a
+                  href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</li>
             </ol>
             <div class="btn-row">
-              <a class="btn btn-light" data-lang="en" href="mailto:liuhuanpsylanguage@foxmail.com">Email the Research Team</a>
+              <a class="btn btn-light" data-lang="en" href="mailto:liuhuanpsylanguage@foxmail.com">Email the Research
+                Team</a>
               <a class="btn btn-light" data-lang="zh" href="mailto:liuhuanpsylanguage@foxmail.com">发送邮件给研究团队</a>
             </div>
           </article>
@@ -683,7 +854,8 @@
         <h3 data-lang="en">3.6 Important Guidelines</h3>
         <h3 data-lang="zh">3.6 重要说明</h3>
         <ul>
-          <li data-lang="en">Do not pause while a sentence is on screen; take breaks during comprehension questions instead.</li>
+          <li data-lang="en">Do not pause while a sentence is on screen; take breaks during comprehension questions
+            instead.</li>
           <li data-lang="zh">请勿在句子呈现时暂停，建议在回答理解题时休息。</li>
           <li data-lang="en">After completion, email the research team so your record can be verified promptly.</li>
           <li data-lang="zh">完成后请发送邮件通知研究团队，以便及时核对记录。</li>
@@ -696,17 +868,31 @@
     <section class="panel">
       <h2 class="section-title" data-lang="en">Privacy &amp; Confidentiality</h2>
       <h2 class="section-title" data-lang="zh">隐私与保密</h2>
-      <p data-lang="en">Your privacy is our utmost priority. All data collected will be strictly confidential, fully anonymised, and used solely for academic research purposes. Any directly identifying information (such as your name) will be removed and replaced with an anonymous code. The key linking this code to personal details will be stored securely and separately from research data. All personal information will be destroyed five years after project completion.</p>
-      <p data-lang="zh">您的隐私是我们的首要任务。所有收集的数据将严格保密、完全匿名化，并仅用于学术研究目的。任何可直接识别身份的信息（如姓名）都将被删除并以匿名代码替代。用于关联匿名代码与个人信息的密钥将被安全、独立存储。所有个人信息将在项目完成五年后销毁。</p>
-      <p data-lang="en">Anonymised data may be made openly available via trusted repositories (e.g. Open Science Framework: https://osf.io/) to support future research. This study has been reviewed by the University Research Ethics Committee and has received a favourable ethical opinion. Participation is entirely voluntary, and you may withdraw at any time without giving a reason.</p>
-      <p data-lang="zh">匿名化数据可能通过可信存储库（如开放科学框架：https://osf.io/）公开，以支持未来研究。本研究已通过大学研究伦理委员会审查并获得伦理批准。参与完全自愿，您可在任何时候无理由退出。</p>
+      <p data-lang="en">Your privacy is our utmost priority. All data collected will be strictly confidential, fully
+        anonymised, and used solely for academic research purposes. Any directly identifying information (such as your
+        name) will be removed and replaced with an anonymous code. The key linking this code to personal details will be
+        stored securely and separately from research data. All personal information will be destroyed five years after
+        project completion.</p>
+      <p data-lang="zh">
+        您的隐私是我们的首要任务。所有收集的数据将严格保密、完全匿名化，并仅用于学术研究目的。任何可直接识别身份的信息（如姓名）都将被删除并以匿名代码替代。用于关联匿名代码与个人信息的密钥将被安全、独立存储。所有个人信息将在项目完成五年后销毁。
+      </p>
+      <p data-lang="en">Anonymised data may be made openly available via trusted repositories (e.g. Open Science
+        Framework: https://osf.io/) to support future research. This study has been reviewed by the University Research
+        Ethics Committee and has received a favourable ethical opinion. Participation is entirely voluntary, and you may
+        withdraw at any time without giving a reason.</p>
+      <p data-lang="zh">匿名化数据可能通过可信存储库（如开放科学框架：https://osf.io/）公开，以支持未来研究。本研究已通过大学研究伦理委员会审查并获得伦理批准。参与完全自愿，您可在任何时候无理由退出。
+      </p>
     </section>
 
     <section class="panel">
       <h2 class="section-title" data-lang="en">Contact</h2>
       <h2 class="section-title" data-lang="zh">联系方式</h2>
-      <p data-lang="en">School of English Studies, Beijing International Studies University<br />Email: <a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">WeChat: LH15122773753</a></p>
-      <p data-lang="zh">北京第二外国语学院英语学院<br />邮箱：<a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">微信：LH15122773753</a></p>
+      <p data-lang="en">School of English Studies, Beijing International Studies University<br />Email: <a
+          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">WeChat:
+          LH15122773753</a></p>
+      <p data-lang="zh">北京第二外国语学院英语学院<br />邮箱：<a
+          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a
+          href="#wechat-qr">微信：LH15122773753</a></p>
       <p class="muted" data-lang="en">No.1 Dingfuzhuang Nanli, Chaoyang District, Beijing, China</p>
       <p class="muted" data-lang="zh">中国北京市朝阳区定福庄南里1号</p>
 
@@ -723,11 +909,16 @@
     </section>
 
     <footer class="footer">
-      <div data-lang="en">If you have any questions or concerns about this research, please contact the research team at <a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>.</div>
-      <div data-lang="zh">如果您对本研究有任何疑问或建议，请联系研究团队邮箱：<a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</div>
-      <div style="margin-top:8px;" data-lang="en"><a href="#wechat-qr">WeChat: LH15122773753</a> or scan the QR code above.</div>
+      <div data-lang="en">If you have any questions or concerns about this research, please contact the research team at
+        <a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>.
+      </div>
+      <div data-lang="zh">如果您对本研究有任何疑问或建议，请联系研究团队邮箱：<a
+          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</div>
+      <div style="margin-top:8px;" data-lang="en"><a href="#wechat-qr">WeChat: LH15122773753</a> or scan the QR code
+        above.</div>
       <div style="margin-top:8px;" data-lang="zh"><a href="#wechat-qr">微信：LH15122773753</a> 或扫描上方二维码。</div>
-      <div style="margin-top:10px;" data-lang="en">© 2026 School of English Studies, Beijing International Studies University. All rights reserved.</div>
+      <div style="margin-top:10px;" data-lang="en">© 2026 School of English Studies, Beijing International Studies
+        University. All rights reserved.</div>
       <div style="margin-top:10px;" data-lang="zh">© 2026 北京第二外国语学院 英语学院. 保留所有权利.</div>
     </footer>
   </div>
@@ -740,6 +931,10 @@
     const step3Section = document.getElementById("step3-section");
     const step3LockEn = document.getElementById("step3LockEn");
     const step3LockZh = document.getElementById("step3LockZh");
+    const step3NoneEn = document.getElementById("step3NoneEn");
+    const step3NoneZh = document.getElementById("step3NoneZh");
+    const skipBtnEn = document.getElementById("skipPreScreenBtnEn");
+    const skipBtnZh = document.getElementById("skipPreScreenBtnZh");
     let currentLang = "en";
     let pretestState = "none";
 
@@ -751,12 +946,24 @@
         result = null;
       }
 
-      if (!result) {
+      const manualSkip = localStorage.getItem("preScreenManualSkip") === "true";
+
+      if (!result && !manualSkip) {
         pretestState = "none";
         pretestStatusEn.className = "status-line status-neutral";
         pretestStatusZh.className = "status-line status-neutral";
         pretestStatusEn.textContent = "Pre-screening status: Not completed yet.";
-        pretestStatusZh.textContent = "预筛选状态：尚未完成。";
+        pretestStatusZh.textContent = "\u9884\u7B5B\u9009\u72B6\u6001\uFF1A\u5C1A\u672A\u5B8C\u6210\u3002";
+        step3Section.classList.add("step3-locked");
+        return;
+      }
+
+      if (manualSkip && (!result || result.status !== "pass")) {
+        pretestState = "manualSkip";
+        pretestStatusEn.className = "status-line status-pass";
+        pretestStatusZh.className = "status-line status-pass";
+        pretestStatusEn.textContent = "Pre-screening manually skipped. Proceed to Step 3.";
+        pretestStatusZh.textContent = "\u9884\u7B5B\u9009\u5DF2\u624B\u52A8\u8DF3\u8FC7\uFF0C\u53EF\u4EE5\u7EE7\u7EED\u6B65\u9AA43\u3002";
         step3Section.classList.remove("step3-locked");
         return;
       }
@@ -765,37 +972,69 @@
         pretestState = "pass";
         pretestStatusEn.className = "status-line status-pass";
         pretestStatusZh.className = "status-line status-pass";
-        pretestStatusEn.textContent = `Pre-screening passed (Score: ${result.score}/${result.total}). You can continue to Step 3.`;
-        pretestStatusZh.textContent = `预筛选已通过（得分：${result.score}/${result.total}），可以继续步骤3。`;
+        pretestStatusEn.textContent = "Pre-screening passed (Score: " + result.score + "/" + result.total + "). You can continue to Step 3.";
+        pretestStatusZh.textContent = "\u9884\u7B5B\u9009\u5DF2\u901A\u8FC7\uFF08\u5F97\u5206\uFF1A" + result.score + "/" + result.total + "\uFF09\uFF0C\u53EF\u4EE5\u7EE7\u7EED\u6B65\u9AA43\u3002";
         step3Section.classList.remove("step3-locked");
       } else if (result.status === "fail") {
         pretestState = "fail";
         pretestStatusEn.className = "status-line status-fail";
         pretestStatusZh.className = "status-line status-fail";
-        pretestStatusEn.textContent = `Pre-screening not passed (Score: ${result.score}/${result.total}). Step 3 is locked.`;
-        pretestStatusZh.textContent = `预筛选未通过（得分：${result.score}/${result.total}），步骤3已锁定。`;
+        pretestStatusEn.textContent = "Pre-screening not passed (Score: " + result.score + "/" + result.total + "). Step 3 is locked.";
+        pretestStatusZh.textContent = "\u9884\u7B5B\u9009\u672A\u901A\u8FC7\uFF08\u5F97\u5206\uFF1A" + result.score + "/" + result.total + "\uFF09\uFF0C\u6B65\u9AA43\u5DF2\u9501\u5B9A\u3002";
         step3Section.classList.add("step3-locked");
       }
     }
 
     function applyLang() {
       document.documentElement.lang = currentLang;
-      document.querySelectorAll("[data-lang]").forEach((el) => {
+      document.querySelectorAll("[data-lang]").forEach(function (el) {
         el.hidden = el.dataset.lang !== currentLang;
       });
       if (preScreenBtn) {
-        preScreenBtn.textContent = currentLang === "en" ? "Pre-screening Experiments" : "预筛选实验入口";
+        preScreenBtn.textContent = currentLang === "en" ? "Pre-screening Experiments" : "\u9884\u7B5B\u9009\u5B9E\u9A8C\u5165\u53E3";
       }
       if (pretestState === "fail") {
         step3LockEn.hidden = currentLang !== "en";
         step3LockZh.hidden = currentLang !== "zh";
+        step3NoneEn.hidden = true;
+        step3NoneZh.hidden = true;
+      } else if (pretestState === "none") {
+        step3LockEn.hidden = true;
+        step3LockZh.hidden = true;
+        step3NoneEn.hidden = currentLang !== "en";
+        step3NoneZh.hidden = currentLang !== "zh";
       } else {
         step3LockEn.hidden = true;
         step3LockZh.hidden = true;
+        step3NoneEn.hidden = true;
+        step3NoneZh.hidden = true;
       }
     }
 
-    langBtn.addEventListener("click", () => {
+    function handleSkipPreScreen() {
+      var msg;
+      if (currentLang === "en") {
+        msg = "I confirm that I have already passed the pre-experiment through other means (e.g. email contact with the research team) and will not perform it here.\n\n" +
+          "\u26A0 WARNING: If you have NOT obtained a valid pre-experiment pass record through email (liuhuanpsylanguage@foxmail.com) or other contact with the research team, the main experiment data will be INVALID and NO PAYMENT will be issued.\n\n" +
+          "Please contact liuhuanpsylanguage@foxmail.com first to confirm that your pre-experiment pass record is on file before clicking OK.\n\n" +
+          "Click OK to confirm and proceed to Step 3 main experiments.";
+      } else {
+        msg = "\u6211\u5DF2\u901A\u8FC7\u5176\u4ED6\u65B9\u5F0F\u901A\u8FC7\u9884\u5B9E\u9A8C\uFF0C\u5728\u8FD9\u91CC\u4E0D\u518D\u8FDB\u884C\u9884\u5B9E\u9A8C\u3002\n\n" +
+          "\u26A0 \u8B66\u544A\uFF1A\u5982\u679C\u60A8\u6CA1\u6709\u901A\u8FC7\u90AE\u4EF6\u8054\u7CFB\uFF08liuhuanpsylanguage@foxmail.com\uFF09\u6216\u5176\u4ED6\u65B9\u5F0F\u4E0E\u7814\u7A76\u56E2\u961F\u53D6\u5F97\u6709\u6548\u7684\u9884\u5B9E\u9A8C\u901A\u8FC7\u8BB0\u5F55\uFF0C\u6B63\u5F0F\u5B9E\u9A8C\u5C06\u65E0\u6548\uFF0C\u4E0D\u4F1A\u53D1\u653E\u916C\u91D1\u3002\n\n" +
+          "\u8BF7\u5148\u4E0E liuhuanpsylanguage@foxmail.com \u8054\u7CFB\uFF0C\u786E\u8BA4\u5DF2\u7ECF\u6709\u6709\u6548\u7684\u9884\u5B9E\u9A8C\u901A\u8FC7\u8BB0\u5F55\uFF0C\u518D\u70B9\u51FB\u786E\u8BA4\u3002\n\n" +
+          "\u70B9\u51FB\u201C\u786E\u5B9A\u201D\u8FDB\u884C Step3 \u6B63\u5F0F\u8BD5\u9A8C\u3002";
+      }
+      if (confirm(msg)) {
+        localStorage.setItem("preScreenManualSkip", "true");
+        applyPretestState();
+        applyLang();
+      }
+    }
+
+    skipBtnEn.addEventListener("click", handleSkipPreScreen);
+    skipBtnZh.addEventListener("click", handleSkipPreScreen);
+
+    langBtn.addEventListener("click", function () {
       currentLang = currentLang === "en" ? "zh" : "en";
       applyLang();
     });
@@ -804,4 +1043,5 @@
     applyLang();
   </script>
 </body>
+
 </html>
