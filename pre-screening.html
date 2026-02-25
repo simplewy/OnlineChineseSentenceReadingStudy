@@ -416,17 +416,17 @@
 <body>··
   <div class="wrap">
     <section class="hero">
-      <h1>Pre-screening Experiments / 预筛选实验</h1>
-      <p>This questionnaire consists of <strong>two parts</strong>:<br>
+      <h1>Pre-Screening Test / 预筛选测试</h1>
+      <p>This test consists of <strong>two parts</strong>:<br>
         <strong>Part I</strong> is Chinese learners’ background information;<br>
         <strong>Part II</strong> is a Chinese two-character test.
       </p>
-      <p>It will take <strong>5 minutes</strong> to complete the whole questionnaire.</p>
+      <p>It will take <strong>5 minutes</strong> to complete the whole test.</p>
       <p>This study is for <strong>research purposes only</strong>. All data will be kept <strong>confidential</strong>
         and used solely for statistical analysis.</p>
-      <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
       <p>本问卷由<strong>两部分</strong>组成：<br>
-        <strong>第一部分</strong>为学习者个人背景信息调查；<br>
+        <strong>第一部分</strong>为学习者个人背景信息；<br>
         <strong>第二部分</strong>为汉语双字词测试。
       </p>
       <p>整个问卷将耗时约<strong>5分钟</strong>。</p>
@@ -445,7 +445,7 @@
     </section>
 
     <form id="quizForm" class="panel">
-      <h2>Part I Chinese learners’ background information / 学习者个人背景信息调查</h2>
+      <h2>Part I Chinese learners’ background information / 学习者个人背景信息</h2>
 
       <div class="q" data-bg="1">
         <h3>1. Name (姓名) <span class="hint">*</span></h3>
@@ -562,7 +562,7 @@
 
       <div class="q" data-bg="13">
         <h3>13. Please upload your Chinese proficiency certificate, ideally the HSK. Preference will be given to those
-          who hold an HSK certificate. (请上传您的汉语水平证书，最好是HSK证书。有该证书者优先考虑。) <span class="hint">*</span></h3>
+          who hold an HSK certificate. (请上传您的汉语水平证书，最好是HSK证书，有该证书者优先考虑。) <span class="hint">*</span></h3>
         <div class="q12-note">
           <label class="opt"><input type="checkbox" name="q12_send_by_email" value="yes" />I will send the certificate
             as an email attachment / 我将通过邮件附件发送证书</label>
@@ -617,7 +617,7 @@
       <div id="vocabQuestions"></div>
 
       <div class="actions">
-        <button class="btn btn-primary" type="submit">计算得分 / Calculate Score</button>
+        <button class="btn btn-primary" type="submit">Submit/提交</button>
       </div>
       <p id="errorMsg" class="error" style="margin-bottom: 20px;" hidden></p>
 
@@ -642,11 +642,11 @@
         <h3 id="resultTitle"></h3>
         <p id="resultText"></p>
         <div class="actions" style="flex-wrap: wrap; gap: 10px;">
-          <a id="sendEmailBtn" class="btn btn-primary" href="#">通过邮箱发送结果 / Send Result via Email</a>
+          <a id="sendEmailBtn" class="btn btn-primary" href="#">Send Result via Email / 通过邮箱发送结果</a>
           <button id="saveFileBtn" class="btn btn-primary" type="button"
-            style="background-color: #28a745; border-color: #28a745;">保存为文件 (稍后手动发送) / Save as File (Send Manually
-            Later)</button>
-          <a id="nextBtn" class="btn btn-light" href="./index.html">返回主页面 / Back to Main Page</a>
+            style="background-color: #28a745; border-color: #28a745;">Save as File (Send Manually Later) / 保存为文件
+            (稍后手动发送)</button>
+          <a id="nextBtn" class="btn btn-light" href="./index.html">Back to Main Page / 返回主页面</a>
         </div>
       </div>
     </form>
@@ -1146,7 +1146,13 @@
         } else {
           resultBox.className = "result fail";
           resultTitle.textContent = "Notice / 提示";
-          resultText.textContent = "Unfortunately, you did not pass the pre-screening test and cannot participate in the main experiment. (很遗憾您没有通过预实验，无法参加正式实验。)";
+
+          if (!langPassed) {
+            resultText.innerHTML = "Unfortunately, you did not pass the pre-screening test. <br><br><strong>Note:</strong> To participate in this study, your native language must include 'English'. Please check if there was a spelling error in your response for Question 7. <br><br>很遗憾您没有通过预筛选。<strong>注：</strong>参加本研究要求母语必须包含英语。请检查第7题的填写是否存在拼写错误（如 'English'）。";
+          } else {
+            resultText.textContent = "Unfortunately, you did not pass the pre-screening test and cannot participate in the main experiment. (很遗憾您没有通过预实验，无法参加正式实验。)";
+          }
+
           nextBtn.href = "./index.html";
           nextBtn.textContent = "Back to Main Page";
         }
