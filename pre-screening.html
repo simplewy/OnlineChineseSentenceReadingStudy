@@ -409,17 +409,25 @@
   </style>
 </head>
 
-<body>
+<body>··
   <div class="wrap">
     <section class="hero">
       <h1>Pre-screening Experiments / 预筛选实验</h1>
-      <p>本页面题目分为两部分：汉语学习背景信息 + 双字词判断（是/否）。</p>
-      <p>Scoring rule: vocabulary section total 60 points; score <strong>greater than 25</strong> is considered passed.
+      <p>This questionnaire consists of <strong>two parts</strong>:<br>
+        <strong>Part I</strong> is Chinese learners’ background information;<br>
+        <strong>Part II</strong> is a Chinese two-character test.
       </p>
-      <div class="progress-box">
-        <div id="progressBar" class="progress"></div>
-      </div>
-      <p id="progressText" style="margin:8px 0 0;font-size:0.9rem;">0 / 74 answered</p>
+      <p>It will take <strong>5 minutes</strong> to complete the whole questionnaire.</p>
+      <p>This study is for <strong>research purposes only</strong>. All data will be kept <strong>confidential</strong>
+        and used solely for statistical analysis.</p>
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+      <p>本问卷由<strong>两部分</strong>组成：<br>
+        <strong>第一部分</strong>为学习者个人背景信息调查；<br>
+        <strong>第二部分</strong>为汉语双字词测试。
+      </p>
+      <p>整个问卷将耗时约<strong>5分钟</strong>。</p>
+      <p>本研究仅用于<strong>学术研究</strong>，所有数据将<strong>严格保密</strong>，并仅用于统计分析。</p>
+
     </section>
 
     <section class="panel">
@@ -427,12 +435,13 @@
       <div class="actions">
         <button id="retryUploadBtn" class="btn btn-light" type="button">重传失败记录 / Retry Pending Uploads</button>
       </div>
-      <p class="tip">提交答卷时会自动上传;若网络失败会先本地排队，之后可点击“重传失败记录”。</p>
+      <p class="tip">Responses will be uploaded automatically upon submission. In case of network failure, they will be
+        queued locally; you can click "Retry Pending Uploads" later.</p>
       <p id="uploadStatus" class="upload-status" hidden></p>
     </section>
 
     <form id="quizForm" class="panel">
-      <h2>Part A. Chinese Learner Background / 汉语学习背景</h2>
+      <h2>Part I Chinese learners’ background information / 学习者个人背景信息调查</h2>
 
       <div class="q" data-bg="1">
         <h3>1. Name (姓名) <span class="hint">*</span></h3>
@@ -442,52 +451,55 @@
       <div class="q" data-bg="2">
         <h3>2. E-mail (邮箱) <span class="hint">*</span></h3>
         <input name="q2_email" type="email" required />
-        <label class="field" for="q2_payment_method" style="margin-top:10px;">Payment 收款方式 <span
-            class="hint">*</span></label>
-        <select id="q2_payment_method" name="q2_payment_method" required>
-          <option value="">请选择 / Select</option>
-          <option value="微信">微信</option>
-          <option value="支付宝">支付宝</option>
-          <option value="PayPal">PayPal</option>
-          <option value="Apple Pay">Apple Pay</option>
-        </select>
-        <label class="field" for="q2_payment_account" style="margin-top:10px;">收款账号 <span class="hint">*</span></label>
-        <input id="q2_payment_account" name="q2_payment_account" placeholder="请输入收款账号 / Enter payment account"
-          required />
       </div>
 
       <div class="q" data-bg="3">
-        <h3>3. Age (年龄) <span class="hint">*</span></h3>
-        <input name="q3_age" type="number" min="10" max="90" required />
+        <h3>3. Payment Method (收款方式) <span class="hint">*</span></h3>
+        <select id="q2_payment_method" name="q2_payment_method" required>
+          <option value="">Select / 请选择</option>
+          <option value="WeChat (微信)">WeChat (微信)</option>
+          <option value="Alipay (支付宝)">Alipay (支付宝)</option>
+          <option value="PayPal">PayPal</option>
+          <option value="Apple Pay">Apple Pay</option>
+        </select>
+        <label class="field" for="q2_payment_account" style="margin-top:10px;">Account Number / 收款账号 <span
+            class="hint">*</span></label>
+        <input id="q2_payment_account" name="q2_payment_account" placeholder="Enter payment account / 请输入收款账号"
+          required />
       </div>
 
       <div class="q" data-bg="4">
-        <h3>4. Gender (性别) <span class="hint">*</span></h3>
+        <h3>4. Age (年龄) <span class="hint">*</span></h3>
+        <input name="q3_age" type="number" min="10" max="90" required />
+      </div>
+
+      <div class="q" data-bg="5">
+        <h3>5. Gender (性别) <span class="hint">*</span></h3>
         <label class="opt"><input type="radio" name="q4_gender" value="Male (男)" required />Male (男)</label>
         <label class="opt"><input type="radio" name="q4_gender" value="Female (女)" />Female (女)</label>
         <label class="opt"><input type="radio" name="q4_gender" value="Other (其他)" />Other (其他)</label>
       </div>
 
-      <div class="q" data-bg="5">
-        <h3>5. Nationality (国籍) <span class="hint">*</span></h3>
+      <div class="q" data-bg="6">
+        <h3>6. Nationality (国籍) <span class="hint">*</span></h3>
         <input name="q5_nationality" required />
       </div>
 
-      <div class="q" data-bg="6">
-        <h3>6. Native language(s) (multiple answers allowed) | 母语 (可多种) <span class="hint">*</span></h3>
+      <div class="q" data-bg="7">
+        <h3>7. Native language(s) (multiple answers allowed) | 母语 (可多种) <span class="hint">*</span></h3>
         <input name="q6_native_languages" required placeholder="e.g., English; Spanish" />
       </div>
 
-      <div class="q" data-bg="7">
-        <h3>7. Have you ever been to China? (是否来过中国？) <span class="hint">*</span></h3>
+      <div class="q" data-bg="8">
+        <h3>8. Have you ever been to China? (是否来过中国？) <span class="hint">*</span></h3>
         <label class="opt"><input type="radio" name="q7_been_china" value="Yes (是)" required />Yes (是)</label>
         <label class="opt"><input type="radio" name="q7_been_china" value="No (否)" />No (否)</label>
         <label class="field" for="q7_detail" style="margin-top:10px;">Purpose and duration (目的与时长)</label>
         <input id="q7_detail" name="q7_detail" placeholder="Optional" />
       </div>
 
-      <div class="q" data-bg="8">
-        <h3>8. Total length of Chinese learning (excluding interruptions) | 累计学习汉语的时长 (不含中断时间) <span
+      <div class="q" data-bg="9">
+        <h3>9. Total length of Chinese learning (excluding interruptions) | 累计学习汉语的时长 (不含中断时间) <span
             class="hint">*</span></h3>
         <label class="opt"><input type="radio" name="q8_learning_length" value="Less than 1 year (少于 1 年)"
             required />Less than 1 year (少于 1 年)</label>
@@ -501,8 +513,8 @@
           years (6 年以上)</label>
       </div>
 
-      <div class="q" data-bg="9">
-        <h3>9. Main learning contexts (multiple answers allowed) | 学习汉语的主要方式或场所 (可多选) <span class="hint">*</span></h3>
+      <div class="q" data-bg="10">
+        <h3>10. Main learning contexts (multiple answers allowed) | 学习汉语的主要方式或场所 (可多选) <span class="hint">*</span></h3>
         <label class="opt"><input type="checkbox" name="q9_contexts"
             value="University in home country (本国高校)" />University in home country (本国高校)</label>
         <label class="opt"><input type="checkbox" name="q9_contexts" value="University in China (中国高校)" />University in
@@ -518,8 +530,8 @@
         <input id="q9_other" name="q9_other" placeholder="Optional" />
       </div>
 
-      <div class="q" data-bg="10">
-        <h3>10. Current Chinese proficiency (self-rated) | 目前的汉语水平 (自评) <span class="hint">*</span></h3>
+      <div class="q" data-bg="11">
+        <h3>11. Current Chinese proficiency (self-rated) | 目前的汉语水平 (自评) <span class="hint">*</span></h3>
         <label class="opt"><input type="radio" name="q10_proficiency" value="Beginner (初级入门)" required />Beginner
           (初级入门)</label>
         <label class="opt"><input type="radio" name="q10_proficiency" value="Elementary (基础)" />Elementary (基础)</label>
@@ -532,8 +544,8 @@
           (接近母语水平)</label>
       </div>
 
-      <div class="q" data-bg="11">
-        <h3>11. Highest HSK level obtained (已获得的最高HSK等级) <span class="hint">*</span></h3>
+      <div class="q" data-bg="12">
+        <h3>12. Highest HSK level obtained (已获得的最高HSK等级) <span class="hint">*</span></h3>
         <label class="opt"><input type="radio" name="q11_hsk" value="Never taken (未参加过)" required />Never taken
           (未参加过)</label>
         <label class="opt"><input type="radio" name="q11_hsk" value="HSK 1" />HSK 1</label>
@@ -544,27 +556,25 @@
         <label class="opt"><input type="radio" name="q11_hsk" value="HSK 6" />HSK 6</label>
       </div>
 
-      <div class="q" data-bg="12">
-        <h3>12. Please upload your Chinese proficiency certificate, ideally the HSK (请上传您的汉语水平证书，最好是HSK证书) <span
-            class="hint">*</span></h3>
+      <div class="q" data-bg="13">
+        <h3>13. Please upload your Chinese proficiency certificate, ideally the HSK. Preference will be given to those
+          who hold an HSK certificate. (请上传您的汉语水平证书，最好是HSK证书。有该证书者优先考虑。) <span class="hint">*</span></h3>
         <div class="q12-note">
-          <p class="hint" style="margin:0 0 8px;">由于 Google Sheet 文件大小限制，本页面不支持直接上传文件。</p>
-          <label class="opt"><input type="checkbox" name="q12_send_by_email" value="yes" />我将通过邮件附件发送证书 / I will send
-            the certificate as an email attachment</label>
-          <label class="field" for="q12_certificate_url" style="margin-top:8px;">或填写可访问的在线地址 / Or provide an accessible
-            URL</label>
+          <label class="opt"><input type="checkbox" name="q12_send_by_email" value="yes" />I will send the certificate
+            as an email attachment / 我将通过邮件附件发送证书</label>
+          <label class="field" for="q12_certificate_url" style="margin-top:8px;">Or provide an accessible URL /
+            或填写可访问的在线地址</label>
           <input id="q12_certificate_url" name="q12_certificate_url" placeholder="https://..." />
-          <p class="hint" style="margin:8px 0 0;">第12题要求：至少满足一种方式（邮件附件 或 在线地址）。</p>
         </div>
       </div>
 
-      <div class="q" data-bg="13">
-        <h3>13. Date of the most recent passed HSK test (Year/Month) | 最近一次通过HSK的时间 (年/月)</h3>
+      <div class="q" data-bg="14">
+        <h3>14. Date of the most recent passed HSK test (Year/Month) | 最近一次通过HSK的时间 (年/月)</h3>
         <input name="q13_hsk_date" placeholder="Optional: e.g., 2025/10" />
       </div>
 
-      <div class="q" data-bg="14">
-        <h3>14. Primary motivation for learning Chinese (学习汉语的主要动机) <span class="hint">*</span></h3>
+      <div class="q" data-bg="15">
+        <h3>15. Primary motivation for learning Chinese (学习汉语的主要动机) <span class="hint">*</span></h3>
         <label class="opt"><input type="radio" name="q14_motivation" value="Academic (学业)" required />Academic
           (学业)</label>
         <label class="opt"><input type="radio" name="q14_motivation" value="Work (工作)" />Work (工作)</label>
@@ -573,7 +583,33 @@
         <label class="opt"><input type="radio" name="q14_motivation" value="Other (其他)" />Other (其他)</label>
       </div>
 
-      <h2 style="margin-top:18px;">Part B. Two-Character Vocabulary Check / 双字词判断（是/否）</h2>
+      <h2 style="margin-top:18px;">Part II Chinese Two-Character Test</h2>
+      <div class="tip" style="margin-bottom: 20px; line-height: 1.6;">
+        <p>You will see <strong>60 two-character sequences</strong>. Only some of them are <strong>real Chinese
+            words</strong>, e.g., 科学. Your task is to decide whether each sequence is an existing Chinese word or not.
+        </p>
+        <p>If you think the sequence is an <strong>existing</strong> Chinese word, you select <strong>"Yes"</strong>. If
+          you are <strong>sure</strong> that the word exists in Chinese, even though you do not know its exact meaning
+          or pronunciation, you may still select <strong>"Yes"</strong>.</p>
+        <p>If you think the sequence is <strong>not an existing</strong> Chinese word, you select <strong>"No"</strong>.
+          If you are <strong>not sure</strong> if it is an existing word in Chinese, you should still select
+          <strong>"No"</strong>.
+        </p>
+        <p>You <strong>do not need to respond rapidly</strong>, but please give your <strong>first impression</strong>,
+          without any outside aids (i.e., <strong>do not consult a dictionary!</strong>). Each sequence will be
+          presented in <strong>Simplified Chinese</strong>.</p>
+        <hr style="margin: 15px 0; border: 0; border-top: 1px dashed #ccc;">
+        <p>您将看到<strong>60个双字词组合</strong>。其中只有一部分是<strong>真实的中文词语</strong>，例如“科学”。请判断每个组合是否是一个现存的中文词语。</p>
+        <p>
+          如果您认为该词组是一个<strong>现存</strong>的中文词语，请选择<strong>“是”</strong>；如果您<strong>确定</strong>这个词组在中文中存在，即使您不知道它的确切含义或发音，仍然可以选择<strong>“是”</strong>。
+        </p>
+        <p>
+          如果您认为该词组<strong>不是</strong>一个现存的中文词语，请选择<strong>“否”</strong>；如果您<strong>不确定</strong>这个词组在中文中是否存在，您依旧应该选择<strong>“否”</strong>。
+        </p>
+        <p>
+          您<strong>不需要快速回答</strong>，但请根据<strong>第一印象</strong>判断，不要借助任何外部帮助（即<strong>不要查阅词典！</strong>）。每个词组将以<strong>简体中文</strong>形式呈现。
+        </p>
+      </div>
       <div id="vocabQuestions"></div>
 
       <div class="actions">
@@ -585,8 +621,16 @@
           <div id="submitProgressFill" class="submit-progress-fill"></div>
         </div>
       </div>
-      <p class="tip">测试信息会自动存储在 Google Sheet。</p>
-      <p class="tip">提交后系统会生成结果。请点击“通过邮箱发送结果”把考生信息和答题结果发送给研究团队。</p>
+      <p class="tip">Test results will be <strong>automatically uploaded</strong> to Google Sheets and a summary will be
+        generated upon submission. / 测试结果将<strong>自动上传</strong>至 Google Sheets，提交后系统将生成结果摘要。</p>
+      <p class="tip"
+        style="color: #d9534f; background: #fdf7f7; padding: 10px; border-radius: 4px; border-left: 5px solid #d9534f;">
+        <strong>IMPORTANT:</strong> To avoid data loss due to potential network issues, please also click
+        <strong>"Send Result via Email"</strong> to send your results manually. This step is <strong>essential</strong>
+        to ensure your participation is valid.
+        <br><br>
+        <strong>重要提示：</strong>为保障实验有效性，提交后请务必点击<strong>“通过邮箱发送结果”</strong>手动发送数据备份，以防止自动上传失效。
+      </p>
       <p id="errorMsg" class="error" hidden></p>
 
       <div id="resultBox" class="result" hidden>
@@ -607,7 +651,7 @@
       "涵浅", "瑕疵", "巅妾", "漆蝠", "襁褓", "傀儡", "晴榻", "瘫痪", "磷祥", "俸禄",
       "抒汞", "喉咙", "滂沱", "骄傲", "卑鄙", "亦筷", "脂肪", "唠叨", "糖描", "囫囵",
       "淘汰", "愤怒", "邋遢", "裳妊", "亵渎", "诠疮", "蹉跎", "蹂躏", "契砣", "贿赂",
-      "瘟疫", "咳嗽", "鹤棋", "羡慕", "颔味", "吩咐", "掌握", "惆怅", "晶嫩", "徘徊"
+      "瘟疫", "咳嗽", "鹤棋", "羡慕", "颁昧", "吩咐", "掌握", "惆怅", "晶嫩", "徘徊"
     ];
     const VOCAB_ANSWER_KEY = [
       true, true, true, false, true, true, true, false, true, false,
@@ -625,8 +669,6 @@
     const resultText = document.getElementById("resultText");
     const sendEmailBtn = document.getElementById("sendEmailBtn");
     const nextBtn = document.getElementById("nextBtn");
-    const progressBar = document.getElementById("progressBar");
-    const progressText = document.getElementById("progressText");
     const retryUploadBtn = document.getElementById("retryUploadBtn");
     const uploadStatus = document.getElementById("uploadStatus");
     const vocabQuestionsEl = document.getElementById("vocabQuestions");
@@ -635,7 +677,7 @@
     const submitProgressText = document.getElementById("submitProgressText");
     const submitProgressFill = document.getElementById("submitProgressFill");
 
-    const FIRST_VOCAB_TOPIC = 15;
+    const FIRST_VOCAB_TOPIC = 1;
     const TOTAL_QUESTIONS = VOCAB_WORDS.length;
     const PASS_SCORE = 25;
     const BACKGROUND_PROGRESS_TOTAL = 14;
@@ -721,7 +763,7 @@
     async function retryPendingUploads() {
       const queue = getQueue();
       if (!queue.length) {
-        setUploadStatus("没有待重传记录。", "ok");
+        setUploadStatus("No pending records to upload.", "ok");
         return;
       }
       const remaining = [];
@@ -741,35 +783,36 @@
       }
       saveQueue(remaining);
       if (remaining.length === 0) {
+        retryUploadBtn.textContent = "✅ Upload Successful / 重传成功";
         if (unverifiedCount > 0) {
-          setUploadStatus(`重传完成：已验证成功 ${successCount} 条，已发送但不可验证 ${unverifiedCount} 条（常见于跨域限制）。`, "ok");
+          setUploadStatus(`Upload completed: ${successCount} verified, ${unverifiedCount} sent but unverified (likely due to CORS).`, "ok");
         } else {
-          setUploadStatus(`重传完成：${successCount} 条全部成功。`, "ok");
+          setUploadStatus(`Upload completed: ${successCount} records sent successfully.`, "ok");
         }
       } else {
-        setUploadStatus(`重传完成：已验证成功 ${successCount} 条，已发送但不可验证 ${unverifiedCount} 条，失败 ${remaining.length} 条。`, "warn");
+        setUploadStatus(`Upload completed: ${successCount} successfully verified, ${unverifiedCount} sent but unverified, ${remaining.length} failed.`, "warn");
       }
     }
 
     function checkBackgroundRequired() {
-      if (!form.q1_name.value.trim()) return "请填写第1题姓名。";
-      if (!form.q2_email.value.trim()) return "请填写第2题邮箱。";
-      if (!form.q2_payment_method.value.trim()) return "请在第2题选择收款方式。";
-      if (!form.q2_payment_account.value.trim()) return "请在第2题填写收款账号。";
-      if (!form.q3_age.value.trim()) return "请填写第3题年龄。";
-      if (!form.querySelector('input[name="q4_gender"]:checked')) return "请完成第4题性别。";
-      if (!form.q5_nationality.value.trim()) return "请填写第5题国籍。";
-      if (!form.q6_native_languages.value.trim()) return "请填写第6题母语。";
-      if (!form.querySelector('input[name="q7_been_china"]:checked')) return "请完成第7题是否来过中国。";
-      if (!form.querySelector('input[name="q8_learning_length"]:checked')) return "请完成第8题学习时长。";
-      if (form.querySelectorAll('input[name="q9_contexts"]:checked').length === 0) return "请至少选择第9题一个学习场景。";
-      if (!form.querySelector('input[name="q10_proficiency"]:checked')) return "请完成第10题自评水平。";
-      if (!form.querySelector('input[name="q11_hsk"]:checked')) return "请完成第11题HSK等级。";
-      const q12SendByEmail = !!form.querySelector('input[name="q12_send_by_email"]:checked');
-      const q12Url = form.q12_certificate_url.value.trim();
-      if (!q12SendByEmail && !q12Url) return "请完成第12题：邮件附件发送或填写在线地址（至少一种）。";
-      if (q12Url && !(q12Url.startsWith("http://") || q12Url.startsWith("https://"))) return "第12题在线地址格式需以 http:// 或 https:// 开头。";
-      if (!form.querySelector('input[name="q14_motivation"]:checked')) return "请完成第14题学习动机。";
+      if (!form.q1_name.value.trim()) return "Please fill in Question 1 (Name).";
+      if (!form.q2_email.value.trim()) return "Please fill in Question 2 (Email).";
+      if (!form.q2_payment_method.value.trim()) return "Please select a payment method in Question 3.";
+      if (!form.q2_payment_account.value.trim()) return "Please fill in your payment account in Question 3.";
+      if (!form.q3_age.value.trim()) return "Please fill in Question 4 (Age).";
+      if (!form.querySelector('input[name="q4_gender"]:checked')) return "Please complete Question 5 (Gender).";
+      if (!form.q5_nationality.value.trim()) return "Please fill in Question 6 (Nationality).";
+      if (!form.q6_native_languages.value.trim()) return "Please fill in Question 7 (Native language).";
+      if (!form.querySelector('input[name="q7_been_china"]:checked')) return "Please complete Question 8 (China visit).";
+      if (!form.querySelector('input[name="q8_learning_length"]:checked')) return "Please complete Question 9 (Learning length).";
+      if (form.querySelectorAll('input[name="q9_contexts"]:checked').length === 0) return "Please select at least one learning context in Question 10.";
+      if (!form.querySelector('input[name="q10_proficiency"]:checked')) return "Please complete Question 11 (Proficiency).";
+      if (!form.querySelector('input[name="q11_hsk"]:checked')) return "Please complete Question 12 (HSK level).";
+      const q13SendByEmail = !!form.querySelector('input[name="q12_send_by_email"]:checked');
+      const q13Url = form.q12_certificate_url.value.trim();
+      if (!q13SendByEmail && !q13Url) return "Please complete Question 13 (Certificate): either select email attachment or provide a URL.";
+      if (q13Url && !(q13Url.startsWith("http://") || q13Url.startsWith("https://"))) return "Question 13 URL must start with http:// or https://.";
+      if (!form.querySelector('input[name="q14_motivation"]:checked')) return "Please complete Question 15 (Motivation).";
       return "";
     }
 
@@ -803,9 +846,7 @@
       const backgroundAnswered = getBackgroundAnsweredCount();
       const totalAnswered = backgroundAnswered + vocabAnswered;
       const totalCount = BACKGROUND_PROGRESS_TOTAL + TOTAL_QUESTIONS;
-      const pct = Math.round((totalAnswered / totalCount) * 100);
-      progressBar.style.width = `${pct}%`;
-      progressText.textContent = `${totalAnswered} / ${totalCount} answered`;
+      // Progress calculation removed to keep UI simple
     }
 
     function refreshVocabSelectionStyles() {
@@ -838,7 +879,7 @@
     function resetSubmitProgress() {
       submitProgressBox.hidden = true;
       submitProgressFill.style.width = "0%";
-      submitProgressText.textContent = "处理中...";
+      submitProgressText.textContent = "Processing...";
     }
 
     function getBeijingTimestamp() {
@@ -872,7 +913,7 @@
       errorMsg.hidden = true;
       resultBox.hidden = true;
       submitBtn.disabled = true;
-      setSubmitProgress(6, "正在校验必填信息...");
+      setSubmitProgress(6, "Validating required information...");
       try {
 
         const bgError = checkBackgroundRequired();
@@ -887,16 +928,16 @@
         for (let i = 0; i < VOCAB_WORDS.length; i++) {
           const topic = FIRST_VOCAB_TOPIC + i;
           if (!form.querySelector(`input[name="vocab_${topic}"]:checked`)) {
-            errorMsg.textContent = `请完成第 ${topic} 题后再提交。`;
+            errorMsg.textContent = `Please complete Question ${topic} before submitting.`;
             errorMsg.hidden = false;
             submitBtn.disabled = false;
             resetSubmitProgress();
             return;
           }
         }
-        setSubmitProgress(28, "正在计算得分...");
+        setSubmitProgress(28, "Calculating score...");
 
-        setSubmitProgress(38, "正在整理提交内容...");
+        setSubmitProgress(38, "Preparing submission data...");
 
         const q12SendByEmail = !!form.querySelector('input[name="q12_send_by_email"]:checked');
         const q12Url = form.q12_certificate_url.value.trim();
@@ -947,14 +988,21 @@
 
         const score = correctCount;
         const total = TOTAL_QUESTIONS;
-        const passed = score > PASS_SCORE;
+
+        // Pass conditions: Score > 25, HSK 3-6, and Native language is English
+        const scorePassed = score > PASS_SCORE;
+        const hskPassed = ["HSK 3", "HSK 4", "HSK 5", "HSK 6"].includes(candidate.highestHSK);
+        const langLower = candidate.nativeLanguages.toLowerCase();
+        const langPassed = langLower.includes("english") || langLower.includes("英语");
+
+        const passed = scorePassed && hskPassed && langPassed;
 
         const submittedAt = getBeijingTimestamp();
         const uploadPayload = {
           status: passed ? "pass" : "fail",
           score,
           total,
-          passThreshold: `>${PASS_SCORE}`,
+          passThreshold: `Score>${PASS_SCORE}, HSK>2, Native=English`,
           candidate,
           answers: vocabAnswers,
           submittedAt
@@ -969,27 +1017,29 @@
           answers: uploadPayload.answers,
           submittedAt
         };
-        setSubmitProgress(48, "正在保存本地结果...");
+        setSubmitProgress(48, "Saving local results...");
 
         localStorage.setItem("preScreenResult", JSON.stringify(resultData));
 
-        setSubmitProgress(70, "正在上传到 Google Sheet...");
+        setSubmitProgress(70, "Uploading to Google Sheets...");
         const uploadRes = await uploadToEndpoint(uploadPayload);
         if (uploadRes.ok) {
           if (uploadRes.verified === false) {
-            setUploadStatus("自动上传已发送，但浏览器无法验证响应（常见于跨域限制）。建议到数据端确认是否入库。", "warn");
+            submitBtn.textContent = "✅ Uploaded to Google Sheets";
+            setUploadStatus("Auto-upload sent, but response could not be verified by browser (common due to CORS). Please check the database to confirm.", "warn");
           } else {
-            setUploadStatus("自动上传成功。", "ok");
+            submitBtn.textContent = "✅ Uploaded to Google Sheets";
+            setUploadStatus("Auto-upload successful.", "ok");
           }
         } else {
           const pendingCount = enqueueResult(resultData);
           if (pendingCount === -1) {
-            setUploadStatus("自动上传失败，且本地缓存空间不足。请在网络稳定时重试提交。", "bad");
+            setUploadStatus("Auto-upload failed and local cache is full. Please try again when the network is stable.", "bad");
           } else {
-            setUploadStatus(`自动上传失败，结果已加入待上传队列（${pendingCount} 条）。`, "bad");
+            setUploadStatus(`Auto-upload failed; result added to pending queue (${pendingCount} records).`, "bad");
           }
         }
-        setSubmitProgress(86, "正在生成结果页面...");
+        setSubmitProgress(86, "Generating result page...");
 
         const mailSubject = passed
           ? `Pre-screening PASSED | ${candidate.name} | Score ${score}/${total}`
@@ -1039,27 +1089,28 @@
 
         if (passed) {
           resultBox.className = "result pass";
-          resultTitle.textContent = `预筛选通过 / Passed (${score}/${total})`;
-          resultText.textContent = "恭喜！您可以进入 Step 3 进行正式实验。点击下方按钮返回主页面并继续 Step 3。";
+          resultTitle.textContent = "Congratulations!";
+          resultText.textContent = "Congratulations on passing the pre-screening test and entering the third step to participate in the main experiment! (恭喜您通过预筛选实验，可进入第三步，参加正式实验！)";
           nextBtn.href = "./index.html#step3-section";
-          nextBtn.textContent = "进入 Step 3 / Go to Step 3";
+          nextBtn.textContent = "Go to Step 3";
         } else {
           resultBox.className = "result fail";
-          resultTitle.textContent = `预筛选未通过 / Not Passed (${score}/${total})`;
-          resultText.textContent = "很抱歉，您本次预筛选未通过，不能进行实验3。后续如有其他实验，欢迎再次参与。";
+          resultTitle.textContent = "Notice / 提示";
+          resultText.textContent = "Unfortunately, you did not pass the pre-screening test and cannot participate in the main experiment. (很遗憾您没有通过预实验，无法参加正式实验。)";
           nextBtn.href = "./index.html";
-          nextBtn.textContent = "返回主页面 / Back to Main Page";
+          nextBtn.textContent = "Back to Main Page";
         }
 
-        setSubmitProgress(100, "处理完成");
+        setSubmitProgress(100, "Processing Complete");
         resultBox.hidden = false;
         resultBox.scrollIntoView({ behavior: "smooth", block: "center" });
         setTimeout(() => {
           resetSubmitProgress();
           submitBtn.disabled = false;
         }, 600);
-      } catch (_) {
-        errorMsg.textContent = "处理过程中发生错误，请稍后重试。";
+      } catch (err) {
+        console.error("Submission error:", err);
+        errorMsg.textContent = "An error occurred during processing. Please try again later. Error: " + err.message;
         errorMsg.hidden = false;
         resetSubmitProgress();
         submitBtn.disabled = false;
@@ -1069,9 +1120,7 @@
     renderVocabQuestions();
     const queued = getQueue().length;
     setUploadStatus(
-      queued
-        ? `固定上传地址已启用。当前有 ${queued} 条待上传记录。`
-        : "固定上传地址已启用。"
+      queued ? `当前有 ${queued} 条待上传记录。` : ""
     );
     updateProgress();
     refreshVocabSelectionStyles();
