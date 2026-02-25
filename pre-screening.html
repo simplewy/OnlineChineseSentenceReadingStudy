@@ -286,10 +286,14 @@
     }
 
     .error {
-      margin-top: 10px;
+      margin-top: 15px;
       color: var(--bad);
-      font-size: 0.92rem;
-      font-weight: 600;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 10px;
+      border: 1px solid var(--bad);
+      border-radius: 8px;
+      background-color: #fff5f5;
     }
 
     .upload-status {
@@ -615,6 +619,8 @@
       <div class="actions">
         <button class="btn btn-primary" type="submit">计算得分 / Calculate Score</button>
       </div>
+      <p id="errorMsg" class="error" style="margin-bottom: 20px;" hidden></p>
+
       <div id="submitProgressBox" class="submit-progress" hidden>
         <p id="submitProgressText">处理中...</p>
         <div class="submit-progress-bar">
@@ -631,7 +637,6 @@
         <br><br>
         <strong>重要提示：</strong>为保障实验有效性，提交后请务必点击<strong>“通过邮箱发送结果”</strong>手动发送数据备份，以防止自动上传失效。
       </p>
-      <p id="errorMsg" class="error" hidden></p>
 
       <div id="resultBox" class="result" hidden>
         <h3 id="resultTitle"></h3>
