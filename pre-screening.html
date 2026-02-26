@@ -549,20 +549,33 @@
       </div>
 
       <div class="q" data-bg="12">
-        <h3>12. Highest HSK level obtained (已获得的最高HSK等级) <span class="hint">*</span></h3>
+        <h3>12. Highest HSK/YCT or equivalent level (已获得的最高HSK/YCT或同等水平等级) <span class="hint">*</span></h3>
         <label class="opt"><input type="radio" name="q11_hsk" value="Never taken (未参加过)" required />Never taken
           (未参加过)</label>
-        <label class="opt"><input type="radio" name="q11_hsk" value="HSK 1" />HSK 1</label>
-        <label class="opt"><input type="radio" name="q11_hsk" value="HSK 2" />HSK 2</label>
-        <label class="opt"><input type="radio" name="q11_hsk" value="HSK 3" />HSK 3</label>
-        <label class="opt"><input type="radio" name="q11_hsk" value="HSK 4" />HSK 4</label>
-        <label class="opt"><input type="radio" name="q11_hsk" value="HSK 5" />HSK 5</label>
-        <label class="opt"><input type="radio" name="q11_hsk" value="HSK 6" />HSK 6</label>
+        <label class="opt"><input type="radio" name="q11_hsk" value="Other equivalent certificates (其他同等水平证书)" />Other
+          equivalent certificates (其他同等水平证书)</label>
+        <div class="two-col">
+          <div>
+            <label class="opt"><input type="radio" name="q11_hsk" value="HSK 1" />HSK 1</label>
+            <label class="opt"><input type="radio" name="q11_hsk" value="HSK 2" />HSK 2</label>
+            <label class="opt"><input type="radio" name="q11_hsk" value="HSK 3" />HSK 3</label>
+            <label class="opt"><input type="radio" name="q11_hsk" value="HSK 4" />HSK 4</label>
+            <label class="opt"><input type="radio" name="q11_hsk" value="HSK 5" />HSK 5</label>
+            <label class="opt"><input type="radio" name="q11_hsk" value="HSK 6" />HSK 6</label>
+          </div>
+          <div>
+            <label class="opt"><input type="radio" name="q11_hsk" value="YCT 1" />YCT 1</label>
+            <label class="opt"><input type="radio" name="q11_hsk" value="YCT 2" />YCT 2</label>
+            <label class="opt"><input type="radio" name="q11_hsk" value="YCT 3" />YCT 3</label>
+            <label class="opt"><input type="radio" name="q11_hsk" value="YCT 4" />YCT 4</label>
+          </div>
+        </div>
       </div>
 
       <div class="q" data-bg="13">
-        <h3>13. Please upload your Chinese proficiency certificate, ideally the HSK. Preference will be given to those
-          who hold an HSK certificate. (请上传您的汉语水平证书，最好是HSK证书，有该证书者优先考虑。) <span class="hint">*</span></h3>
+        <h3>13. Please upload your Chinese proficiency certificate, ideally the HSK/YCT. Preference will be given to
+          those
+          who hold an HSK/YCT certificate. (请上传您的汉语水平证书，最好是HSK/YCT证书，有该证书者优先考虑。) <span class="hint">*</span></h3>
         <div class="q12-note">
           <label class="opt"><input type="checkbox" name="q12_send_by_email" value="yes" />I will send the certificate
             as an email attachment / 我将通过邮件附件发送证书</label>
@@ -573,7 +586,7 @@
       </div>
 
       <div class="q" data-bg="14">
-        <h3>14. Date of the most recent passed HSK test (Year/Month) | 最近一次通过HSK的时间 (年/月)</h3>
+        <h3>14. Date of the most recent passed HSK/YCT/Equivalent test (Year/Month) | 最近一次通过HSK/YCT/同等考试的时间 (年/月)</h3>
         <input name="q13_hsk_date" placeholder="Optional: e.g., 2025/10" />
       </div>
 
@@ -852,7 +865,7 @@
       if (!form.querySelector('input[name="q8_learning_length"]:checked')) return "Please complete Question 9 (Learning length).";
       if (form.querySelectorAll('input[name="q9_contexts"]:checked').length === 0) return "Please select at least one learning context in Question 10.";
       if (!form.querySelector('input[name="q10_proficiency"]:checked')) return "Please complete Question 11 (Proficiency).";
-      if (!form.querySelector('input[name="q11_hsk"]:checked')) return "Please complete Question 12 (HSK level).";
+      if (!form.querySelector('input[name="q11_hsk"]:checked')) return "Please complete Question 12 (HSK/YCT level).";
       const q13SendByEmail = !!form.querySelector('input[name="q12_send_by_email"]:checked');
       const q13Url = form.q12_certificate_url.value.trim();
       if (!q13SendByEmail && !q13Url) return "Please complete Question 13 (Certificate): either select email attachment or provide a URL.";
