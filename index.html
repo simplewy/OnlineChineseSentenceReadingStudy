@@ -331,6 +331,42 @@
       box-shadow: 0 10px 28px -2px rgba(154, 127, 232, 0.2);
     }
 
+    .exp-link-disabled {
+      position: relative;
+      cursor: not-allowed;
+      opacity: 0.72;
+    }
+
+    .exp-link-disabled:hover {
+      transform: none;
+      border-color: #e2e8f0;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
+    }
+
+    .exp-link-disabled::after {
+      content: attr(data-tip);
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fdba74;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.4;
+      pointer-events: none;
+      display: none;
+      z-index: 2;
+    }
+
+    .exp-link-disabled:hover::after,
+    .exp-link-disabled:focus-visible::after {
+      display: block;
+    }
+
     .exp-link .label {
       display: inline-block;
       padding: 4px 10px;
@@ -955,7 +991,8 @@
           testing.</p>
         <p class="muted" data-lang="zh">实验1/2为阅读任务；实验3/4为阅读任务加记忆测试。</p>
         <div class="exp-grid">
-          <a class="exp-link" href="https://farm.pcibex.net/p/tJeHAM/" target="_blank" rel="noopener">
+          <a id="exp1Link" class="exp-link exp-link-disabled" href="https://farm.pcibex.net/p/tJeHAM/" target="_blank"
+            rel="noopener" aria-disabled="true" data-tip="">
             <div class="label">Experiment 1</div>
             <h3 data-lang="en">Start Experiment 1</h3>
             <h3 data-lang="zh">开始实验 1</h3>
@@ -1194,8 +1231,25 @@
     const step3NoneZh = document.getElementById("step3NoneZh");
     const skipBtnEn = document.getElementById("skipPreScreenBtnEn");
     const skipBtnZh = document.getElementById("skipPreScreenBtnZh");
+    const exp1Link = document.getElementById("exp1Link");
     let currentLang = "en";
     let pretestState = "none";
+
+    function getExp1ClosedTip() {
+      return currentLang === "en"
+        ? "Recruitment for Experiment 1 has reached its target. We invite you to participate in one of our other ongoing experiments. Thank you for your support."
+        : "实验1已收集到足够数据，入口已关闭。";
+    }
+
+    function applyExp1ClosedTip() {
+      if (!exp1Link) {
+        return;
+      }
+      const tip = getExp1ClosedTip();
+      exp1Link.setAttribute("data-tip", tip);
+      exp1Link.setAttribute("title", tip);
+      exp1Link.setAttribute("aria-label", tip);
+    }
 
     function applyPretestState() {
       let result = null;
@@ -1252,6 +1306,7 @@
       if (preScreenBtn) {
         preScreenBtn.textContent = currentLang === "en" ? "Pre-screening Experiments" : "\u9884\u7B5B\u9009\u5B9E\u9A8C\u5165\u53E3";
       }
+      applyExp1ClosedTip();
       if (pretestState === "fail") {
         step3LockEn.hidden = currentLang !== "en";
         step3LockZh.hidden = currentLang !== "zh";
@@ -1292,6 +1347,13 @@
 
     skipBtnEn.addEventListener("click", handleSkipPreScreen);
     skipBtnZh.addEventListener("click", handleSkipPreScreen);
+
+    if (exp1Link) {
+      exp1Link.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert(getExp1ClosedTip());
+      });
+    }
 
     langBtn.addEventListener("click", function () {
       currentLang = currentLang === "en" ? "zh" : "en";
