@@ -998,7 +998,8 @@
             <h3 data-lang="zh">开始实验 1</h3>
             <div class="muted">farm.pcibex.net/p/tJeHAM/</div>
           </a>
-          <a class="exp-link" href="https://farm.pcibex.net/p/FrVOrI/" target="_blank" rel="noopener">
+          <a id="exp2Link" class="exp-link exp-link-disabled" href="https://farm.pcibex.net/p/FrVOrI/" target="_blank"
+            rel="noopener" aria-disabled="true" data-tip="">
             <div class="label">Experiment 2</div>
             <h3 data-lang="en">Start Experiment 2</h3>
             <h3 data-lang="zh">开始实验 2</h3>
@@ -1153,9 +1154,11 @@
             exceptional performance, and we are pleased to award them an additional electronic Certificate of Honor in
             recognition of their outstanding contribution.</li>
           <li data-lang="zh">我们由衷感谢所有以优异表现成功完成实验的参与者，并很高兴为他们颁发额外的电子荣誉证书，以表彰他们的杰出贡献。</li>
-          <li data-lang="en">The experiment will end on March 15. Please ensure you complete it before the deadline.</li>
-          <li data-lang="zh">实验将在3月15日结束。请确保在截止日期之前完成。</li>
-          <li data-lang="en">If the participants are minors, parents can help them understand the procedures beforehand, but please do not interfere or give instructions during the actual experiment.</li>
+          <li data-lang="en">The experiment will end on March 18. Please ensure you complete it before the deadline.
+          </li>
+          <li data-lang="zh">实验将在3月18日结束。请确保在截止日期之前完成。</li>
+          <li data-lang="en">If the participants are minors, parents can help them understand the procedures beforehand,
+            but please do not interfere or give instructions during the actual experiment.</li>
           <li data-lang="zh">如果参与者是未成年人，家长可以帮助他们提前理解实验程序，但请不要在实际实验期间干预或给予指导。</li>
         </ul>
       </article>
@@ -1232,6 +1235,7 @@
     const skipBtnEn = document.getElementById("skipPreScreenBtnEn");
     const skipBtnZh = document.getElementById("skipPreScreenBtnZh");
     const exp1Link = document.getElementById("exp1Link");
+    const exp2Link = document.getElementById("exp2Link");
     let currentLang = "en";
     let pretestState = "none";
 
@@ -1241,14 +1245,25 @@
         : "实验1已收集到足够数据，入口已关闭。";
     }
 
-    function applyExp1ClosedTip() {
-      if (!exp1Link) {
-        return;
+    function getExp2ClosedTip() {
+      return currentLang === "en"
+        ? "Recruitment for Experiment 2 has reached its target. We invite you to participate in one of our other ongoing experiments. Thank you for your support."
+        : "实验2已收集到足够数据，入口已关闭。";
+    }
+
+    function applyExpClosedTips() {
+      if (exp1Link) {
+        const tip1 = getExp1ClosedTip();
+        exp1Link.setAttribute("data-tip", tip1);
+        exp1Link.setAttribute("title", tip1);
+        exp1Link.setAttribute("aria-label", tip1);
       }
-      const tip = getExp1ClosedTip();
-      exp1Link.setAttribute("data-tip", tip);
-      exp1Link.setAttribute("title", tip);
-      exp1Link.setAttribute("aria-label", tip);
+      if (exp2Link) {
+        const tip2 = getExp2ClosedTip();
+        exp2Link.setAttribute("data-tip", tip2);
+        exp2Link.setAttribute("title", tip2);
+        exp2Link.setAttribute("aria-label", tip2);
+      }
     }
 
     function applyPretestState() {
@@ -1306,7 +1321,7 @@
       if (preScreenBtn) {
         preScreenBtn.textContent = currentLang === "en" ? "Pre-screening Experiments" : "\u9884\u7B5B\u9009\u5B9E\u9A8C\u5165\u53E3";
       }
-      applyExp1ClosedTip();
+      applyExpClosedTips();
       if (pretestState === "fail") {
         step3LockEn.hidden = currentLang !== "en";
         step3LockZh.hidden = currentLang !== "zh";
@@ -1352,6 +1367,13 @@
       exp1Link.addEventListener("click", function (event) {
         event.preventDefault();
         alert(getExp1ClosedTip());
+      });
+    }
+
+    if (exp2Link) {
+      exp2Link.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert(getExp2ClosedTip());
       });
     }
 
