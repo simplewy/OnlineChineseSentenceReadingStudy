@@ -118,6 +118,42 @@
       line-height: 1;
     }
 
+    /* Experiment Closed Banner Styles */
+    .ended-banner {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 18px;
+      background: #fff1f2;
+      border: 2px solid #fda4af;
+      color: #9f1239;
+      text-align: center;
+      font-size: 1.05rem;
+      box-shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.15);
+      line-height: 1.6;
+    }
+
+    .ended-banner strong {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* Grayscale completely and disable interactions */
+    .ended-content {
+      filter: grayscale(100%);
+      opacity: 0.6;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Keep mail links clickable just in case participants need to contact */
+    .ended-content a[href^="mailto:"] {
+      pointer-events: auto;
+      position: relative;
+      z-index: 10;
+    }
+
     .hero {
       margin-top: 26px;
       padding: 36px 34px;
@@ -776,450 +812,465 @@
       </button>
     </header>
 
-    <section class="hero">
-      <div class="tag-row">
-        <span class="tag" data-lang="en">School of English Studies, Beijing International Studies University</span>
-        <span class="tag" data-lang="zh">北京第二外国语学院英语学院</span>
+    <!-- NEW GLOBALLY VISIBLE BANNER (Not Grayed Out) -->
+    <div class="ended-banner">
+      <div data-lang="en">
+        <strong>🚨 All experiments have successfully concluded.</strong>
+        Thank you for your attention and support!<br/>Future recruitments for new experiments will be posted on this page.
       </div>
+      <div data-lang="zh">
+        <strong>🚨 本次所有实验均已圆满结束。</strong>
+        感谢您的关注与支持！<br/>后续如有新实验，我们将在此页面发布新的招募信息。
+      </div>
+    </div>
 
-      <h1 data-lang="en">Online Chinese Sentence Reading Study by Native English Speakers</h1>
-      <h1 data-lang="zh">英语母语者在线中文句子阅读研究</h1>
+    <!-- WRAPPER TO GRAY OUT ALL PREVIOUS CONTENT -->
+    <div class="ended-content">
+      <section class="hero">
+        <div class="tag-row">
+          <span class="tag" data-lang="en">School of English Studies, Beijing International Studies University</span>
+          <span class="tag" data-lang="zh">北京第二外国语学院英语学院</span>
+        </div>
 
-      <p data-lang="en">Join our academic research to help people understand how native English speakers comprehend and
-        process Chinese sentences.</p>
-      <p data-lang="zh">加入我们的学术研究，帮助人们了解英语母语者如何理解和处理中文句子。</p>
-    </section>
+        <h1 data-lang="en">Online Chinese Sentence Reading Study by Native English Speakers</h1>
+        <h1 data-lang="zh">英语母语者在线中文句子阅读研究</h1>
 
-    <section class="panel">
-      <h2 class="section-title" data-lang="en">About the Study</h2>
-      <h2 class="section-title" data-lang="zh">研究简介</h2>
-      <p data-lang="en">Welcome to our online study. We are an academic research team from School of English Studies,
-        Beijing International Studies University. This research investigates how native English speakers comprehend and
-        process Chinese sentences. Your participation will support high-impact publications and advance linguistic
-        research and international Chinese education.</p>
-      <p data-lang="zh">
-        欢迎参与我们的在线研究。我们是来自北京第二外国语学院英语学院的学术研究团队。本研究旨在探讨英语母语者如何理解和处理中文句子。您的参与将支持高影响力的学术发表，并推动语言学研究和国际中文教育的发展。</p>
-      <p data-lang="en"><strong>Funding:</strong> National Social Science Fund of China</p>
-      <p data-lang="zh"><strong>资助单位：</strong>国家社会科学基金</p>
-      <p data-lang="en"><strong>Research Supervisor:</strong> Prof. Changyin Zhou &amp; Dr. Huan Liu</p>
-      <p data-lang="zh"><strong>研究人员：</strong>周长银教授 &amp; 刘欢博士</p>
-      <p data-lang="en"><strong>Contact for Queries:</strong> <a
-          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">WeChat:
-          LH15122773753</a></p>
-      <p data-lang="zh"><strong>联系邮箱：</strong><a
-          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a
-          href="#wechat-qr">微信：LH15122773753</a></p>
-    </section>
+        <p data-lang="en">Join our academic research to help people understand how native English speakers comprehend and
+          process Chinese sentences.</p>
+        <p data-lang="zh">加入我们的学术研究，帮助人们了解英语母语者如何理解和处理中文句子。</p>
+      </section>
 
-    <section class="panel">
-      <h2 class="section-title" data-lang="en">Participation Guidelines</h2>
-      <h2 class="section-title" data-lang="zh">参与指南</h2>
-      <p class="muted" data-lang="en">Please follow the three-step process below to ensure valid participation and data
-        submission.</p>
-      <p class="muted" data-lang="zh">请按下方三步流程参与，以确保实验资格与数据提交有效。</p>
+      <section class="panel">
+        <h2 class="section-title" data-lang="en">About the Study</h2>
+        <h2 class="section-title" data-lang="zh">研究简介</h2>
+        <p data-lang="en">Welcome to our online study. We are an academic research team from School of English Studies,
+          Beijing International Studies University. This research investigates how native English speakers comprehend and
+          process Chinese sentences. Your participation will support high-impact publications and advance linguistic
+          research and international Chinese education.</p>
+        <p data-lang="zh">
+          欢迎参与我们的在线研究。我们是来自北京第二外国语学院英语学院的学术研究团队。本研究旨在探讨英语母语者如何理解和处理中文句子。您的参与将支持高影响力的学术发表，并推动语言学研究和国际中文教育的发展。</p>
+        <p data-lang="en"><strong>Funding:</strong> National Social Science Fund of China</p>
+        <p data-lang="zh"><strong>资助单位：</strong>国家社会科学基金</p>
+        <p data-lang="en"><strong>Research Supervisor:</strong> Prof. Changyin Zhou &amp; Dr. Huan Liu</p>
+        <p data-lang="zh"><strong>研究人员：</strong>周长银教授 &amp; 刘欢博士</p>
+        <p data-lang="en"><strong>Contact for Queries:</strong> <a
+            href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">WeChat:
+            LH15122773753</a></p>
+        <p data-lang="zh"><strong>联系邮箱：</strong><a
+            href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a
+            href="#wechat-qr">微信：LH15122773753</a></p>
+      </section>
 
-      <div class="flow">
+      <section class="panel">
+        <h2 class="section-title" data-lang="en">Participation Guidelines</h2>
+        <h2 class="section-title" data-lang="zh">参与指南</h2>
+        <p class="muted" data-lang="en">Please follow the three-step process below to ensure valid participation and data
+          submission.</p>
+        <p class="muted" data-lang="zh">请按下方三步流程参与，以确保实验资格与数据提交有效。</p>
+
+        <div class="flow">
+          <article class="card">
+            <div class="step" data-lang="en">Step 1</div>
+            <div class="step" data-lang="zh">步骤 1</div>
+            <h3 data-lang="en">Check Eligibility</h3>
+            <h3 data-lang="zh">确认参与条件</h3>
+            <ul>
+              <li data-lang="en">Native language: English</li>
+              <li data-lang="zh">母语：英语</li>
+              <li data-lang="en">Chinese level: HSK 3-6 (or equivalent level)</li>
+              <li data-lang="zh">中文水平：HSK 3-6级(或同等水平)</li>
+              <li data-lang="en">Age: 10-50</li>
+              <li data-lang="zh">年龄：10-50 岁</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="step" data-lang="en">Step 2</div>
+            <div class="step" data-lang="zh">步骤 2</div>
+            <h3 data-lang="en">Pre-Screening Test</h3>
+            <h3 data-lang="zh">预筛选测试</h3>
+            <p class="muted" data-lang="en">Complete pre-screening first. Only participants who pass can proceed to Step 3
+              main experiments.</p>
+            <p class="muted" data-lang="zh">请先完成预筛选。仅通过预筛选的参与者可进入步骤3正式实验。</p>
+            <p class="muted" data-lang="en">Estimated time: about 5 minutes.</p>
+            <p class="muted" data-lang="zh">预计用时：约5分钟。</p>
+            <div class="btn-row">
+              <a id="preScreenBtn" class="btn btn-primary" href="./pre-screening.html" target="_blank"
+                rel="noopener" aria-disabled="true" style="opacity: 0.6; filter: grayscale(0.4); cursor: not-allowed;">Pre-Screening Test</a>
+            </div>
+            <p id="pretestStatusEn" class="status-line status-neutral" data-lang="en">Pre-screening status: Not completed
+              yet.</p>
+            <p id="pretestStatusZh" class="status-line status-neutral" data-lang="zh">
+              &#x9884;&#x7B5B;&#x9009;&#x72B6;&#x6001;&#xFF1A;&#x5C1A;&#x672A;&#x5B8C;&#x6210;&#x3002;</p>
+            <div class="skip-section" data-lang="en" style="display: none;">
+              <div class="skip-label">Already passed pre-screening elsewhere?</div>
+              <button id="skipPreScreenBtnEn" class="btn-skip" type="button"><span class="skip-icon">&#x1F6AA;</span> Skip
+                Pre-Screening &amp; Go to Step 3</button>
+            </div>
+            <div class="skip-section" data-lang="zh" style="display: none;">
+              <div class="skip-label">
+                &#x5DF2;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#x9884;&#x5B9E;&#x9A8C;&#xFF1F;
+              </div>
+              <button id="skipPreScreenBtnZh" class="btn-skip" type="button"><span class="skip-icon">&#x1F6AA;</span>
+                &#x8DF3;&#x8FC7;&#x9884;&#x5B9E;&#x9A8C;&#xFF0C;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x6B65;&#x9AA4;3</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="step" data-lang="en">Step 3</div>
+            <div class="step" data-lang="zh">步骤 3</div>
+            <h3 data-lang="en">Main Study</h3>
+            <h3 data-lang="zh">正式实验</h3>
+            <p class="muted" data-lang="en">The main study consists of four experiments. The six subsections below guide
+              you through task scope, task outline, compensation, experiment access, data submission, and key guidelines.
+            </p>
+            <p class="muted" data-lang="zh">正式实验模块由4个实验组成，以下6个小节将指引您进行实验：任务范围、任务说明、报酬标准、实验入口、数据提交与关键注意事项。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" id="step3-section">
+        <h2 class="section-title" data-lang="en">Step 3: Main Study</h2>
+        <h2 class="section-title" data-lang="zh">步骤3：正式实验</h2>
+        <p class="muted" data-lang="en">This stage contains four experiments. The six subsections below provide the
+          complete guidance for participation.</p>
+        <p class="muted" data-lang="zh">本阶段包含4个实验，以下6个小节提供完整参与指引。</p>
+        <p id="step3LockEn" class="lock-note" data-lang="en" hidden>Step 3 is currently locked because pre-screening
+          requirements (score, HSK level, or native language) were not met.</p>
+        <p id="step3LockZh" class="lock-note" data-lang="zh" hidden>由于未达到预筛选要求（得分、HSK等级或母语条件），步骤3已锁定。</p>
+        <p id="step3NoneEn" class="lock-note-info" data-lang="en" hidden>&#x1F512; Step 3 is locked. Please complete Step
+          2 pre-screening first and pass the test before accessing the main experiments.</p>
+        <p id="step3NoneZh" class="lock-note-info" data-lang="zh" hidden>&#x1F512; 步骤3已锁定。请先完成步骤2的预筛选测试并通过，才能进入正式实验。</p>
+
         <article class="card">
-          <div class="step" data-lang="en">Step 1</div>
-          <div class="step" data-lang="zh">步骤 1</div>
-          <h3 data-lang="en">Check Eligibility</h3>
-          <h3 data-lang="zh">确认参与条件</h3>
-          <ul>
-            <li data-lang="en">Native language: English</li>
-            <li data-lang="zh">母语：英语</li>
-            <li data-lang="en">Chinese level: HSK 3-6 (or equivalent level)</li>
-            <li data-lang="zh">中文水平：HSK 3-6级(或同等水平)</li>
-            <li data-lang="en">Age: 10-50</li>
-            <li data-lang="zh">年龄：10-50 岁</li>
+          <h3 data-lang="en">3.1 Participation Content</h3>
+          <h3 data-lang="zh">3.1 参与内容</h3>
+          <div class="split">
+            <div>
+              <p class="muted" data-lang="en"><strong>Study Structure (4 Experiments)</strong></p>
+              <p class="muted" data-lang="zh"><strong>研究结构（4个实验）</strong></p>
+              <ul>
+                <li data-lang="en">Experiment 1 and 2: self-paced sentence reading only.</li>
+                <li data-lang="zh">实验1和实验2：仅包含自定步调句子阅读。</li>
+                <li data-lang="en">Experiment 3 and 4: sentence reading plus a working-memory test.</li>
+                <li data-lang="zh">实验3和实验4：包含句子阅读与工作记忆测试。</li>
+                <li data-lang="en">If you complete both Experiment 3 and 4, the memory test is required only once.</li>
+                <li data-lang="zh">若同时参与实验3和4，工作记忆测试只需完成一次。</li>
+              </ul>
+            </div>
+            <div>
+              <p class="muted" data-lang="en"><strong>Time and Task Composition</strong></p>
+              <p class="muted" data-lang="zh"><strong>时间与任务构成</strong></p>
+              <ol>
+                <li data-lang="en">Main reading task: about 50 minutes (Experiment 1/2), about 30 minutes (Experiment
+                  3/4).</li>
+                <li data-lang="zh">主阅读任务：实验1/2约50分钟，实验3/4约30分钟。</li>
+                <li data-lang="en">Working-memory test: about 20 minutes (Experiment 3/4 only).</li>
+                <li data-lang="zh">工作记忆测试：约20分钟（仅实验3/4）。</li>
+              </ol>
+              <p class="muted" data-lang="en">Actual duration may vary by reading speed and rest intervals.</p>
+              <p class="muted" data-lang="zh">实际用时会因个人阅读速度与休息安排略有差异。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" style="margin-top:14px;">
+          <h3 data-lang="en">3.2 Brief Outline of Tasks</h3>
+          <h3 data-lang="zh">3.2 任务简要说明</h3>
+          <p class="muted" data-lang="en">Step 3 includes two task types: sentence reading and working-memory test. All
+            tasks are conducted online and require no software installation.</p>
+          <p class="muted" data-lang="zh">步骤3包含两类任务：句子阅读与工作记忆测试。所有任务均在线进行，无需安装软件。</p>
+          <div class="split">
+            <article class="card">
+              <h3 data-lang="en">a. Sentence Reading Task</h3>
+              <h3 data-lang="zh">a. 句子阅读任务</h3>
+              <p data-lang="en">Read each sentence at your own pace and answer Yes/No comprehension questions.</p>
+              <p data-lang="zh">您将按自定步调阅读句子，并回答是/否理解题。</p>
+            </article>
+            <article class="card">
+              <h3 data-lang="en">b. Working Memory</h3>
+              <h3 data-lang="zh">b. 工作记忆测试</h3>
+              <p data-lang="en">In Experiment 3/4, complete an Automated Operation Span Task: remember letter sequences
+                while judging simple equations.</p>
+              <p data-lang="zh">在实验3/4中，您需完成自动化操作广度任务：在记忆字母序列的同时判断简单算式正误。</p>
+            </article>
+          </div>
+        </article>
+
+        <article class="card" style="margin-top:14px;">
+          <h3 data-lang="en">3.3 Compensation</h3>
+          <h3 data-lang="zh">3.3 报酬标准</h3>
+          <p class="muted" data-lang="en">You can complete any number of experiments. Payment is based on how many you
+            finish.</p>
+          <p class="muted" data-lang="zh">您可参加任意数量的实验，报酬按完成数量发放。</p>
+          <div class="grid-4">
+            <article class="money">
+              <div data-lang="en">Complete 1 experiment</div>
+              <div data-lang="zh">完成 1 个实验</div>
+              <strong>$15</strong>
+              <div class="chips"><span>£11</span><span>A$20</span><span>C$20</span><span>¥100</span></div>
+            </article>
+            <article class="money">
+              <div data-lang="en">Complete 2 experiments</div>
+              <div data-lang="zh">完成 2 个实验</div>
+              <strong>$30</strong>
+              <div class="chips"><span>£22</span><span>A$40</span><span>C$40</span><span>¥200</span></div>
+            </article>
+            <article class="money">
+              <div data-lang="en">Complete 3 experiments</div>
+              <div data-lang="zh">完成 3 个实验</div>
+              <strong>$45</strong>
+              <div class="chips"><span>£33</span><span>A$60</span><span>C$60</span><span>¥300</span></div>
+            </article>
+            <article class="money">
+              <div data-lang="en">Complete all 4 experiments</div>
+              <div data-lang="zh">完成全部 4 个实验</div>
+              <strong>$60</strong>
+              <div class="chips"><span>£44</span><span>A$80</span><span>C$80</span><span>¥400</span></div>
+            </article>
+          </div>
+        </article>
+
+        <article class="card" style="margin-top:14px;">
+          <h3 data-lang="en">3.4 Main Experiment Links</h3>
+          <h3 data-lang="zh">3.4 正式实验入口</h3>
+          <p class="muted" data-lang="en"><strong>Invitation note:</strong> If you have passed pre-screening, use the
+            links below to enter the main experiments.</p>
+          <p class="muted" data-lang="zh"><strong>邀请说明：</strong>若您已通过预筛选，请使用下方链接进入正式实验。</p>
+          <p class="muted" data-lang="en">Experiment 1/2 are reading-only; Experiment 3/4 include reading plus memory
+            testing.</p>
+          <p class="muted" data-lang="zh">实验1/2为阅读任务；实验3/4为阅读任务加记忆测试。</p>
+          <div class="exp-grid">
+            <a id="exp1Link" class="exp-link exp-link-disabled" href="https://farm.pcibex.net/p/tJeHAM/" target="_blank"
+              rel="noopener" aria-disabled="true" data-tip="">
+              <div class="label">Experiment 1</div>
+              <h3 data-lang="en">Start Experiment 1</h3>
+              <h3 data-lang="zh">开始实验 1</h3>
+              <div class="muted">farm.pcibex.net/p/tJeHAM/</div>
+            </a>
+            <a id="exp2Link" class="exp-link exp-link-disabled" href="https://farm.pcibex.net/p/FrVOrI/" target="_blank"
+              rel="noopener" aria-disabled="true" data-tip="">
+              <div class="label">Experiment 2</div>
+              <h3 data-lang="en">Start Experiment 2</h3>
+              <h3 data-lang="zh">开始实验 2</h3>
+              <div class="muted">farm.pcibex.net/p/FrVOrI/</div>
+            </a>
+            <a id="exp3Link" class="exp-link exp-link-disabled" href="https://farm.pcibex.net/p/hDOUxY/" target="_blank" 
+              rel="noopener" aria-disabled="true" data-tip="">
+              <div class="label">Experiment 3</div>
+              <h3 data-lang="en">Start Experiment 3</h3>
+              <h3 data-lang="zh">开始实验 3</h3>
+              <div class="muted">farm.pcibex.net/p/hDOUxY/</div>
+            </a>
+            <a id="exp4Link" class="exp-link exp-link-disabled" href="https://farm.pcibex.net/p/iqoocv/" target="_blank" 
+              rel="noopener" aria-disabled="true" data-tip="">
+              <div class="label">Experiment 4</div>
+              <h3 data-lang="en">Start Experiment 4</h3>
+              <h3 data-lang="zh">开始实验 4</h3>
+              <div class="muted">farm.pcibex.net/p/iqoocv/</div>
+            </a>
+          </div>
+        </article>
+
+        <article class="card" style="margin-top:14px;">
+          <h3 data-lang="en">3.5 How to Save and Send Working Memory Data (Exp 3 & 4)</h3>
+          <h3 data-lang="zh">3.5 实验3/4工作记忆数据保存与提交</h3>
+          <div class="split">
+            <article class="card">
+              <ol>
+                <li data-lang="en">After the memory test, click <b>Continue</b>.</li>
+                <li data-lang="zh">完成记忆测试后，先点击 <b>Continue</b>。</li>
+                <li data-lang="en">On the next page, click <b>Show data</b>.</li>
+                <li data-lang="zh">在下一页点击 <b>Show data</b>。</li>
+                <li data-lang="en">Copy the output rows and save them into an Excel file.</li>
+                <li data-lang="zh">复制输出数据并保存到 Excel 文件。</li>
+                <li data-lang="en">Send the file to <a
+                    href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>.</li>
+                <li data-lang="zh">将文件发送至 <a
+                    href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</li>
+              </ol>
+
+              <!-- Mockup 1: Feedback Block (illustrates step 1) -->
+              <div class="mockup-container">
+                <div class="mockup-feedback">
+                  <div class="mockup-feedback-header">Feedback of the final test block</div>
+                  <div class="mockup-feedback-rows">
+                    <div class="mockup-feedback-row">
+                      <div class="mockup-feedback-label">Complete correct trials in the<br>final block of in which both
+                        letter and<br>math tasks were correct (O-span score)</div>
+                      <div class="mockup-feedback-value">30 points (0%)</div>
+                    </div>
+                    <div class="mockup-feedback-row">
+                      <div class="mockup-feedback-label">Percentage correct math<br>problems</div>
+                      <div class="mockup-feedback-value">89%</div>
+                    </div>
+                    <div class="mockup-feedback-row">
+                      <div class="mockup-feedback-label">Percentage correctly remembered<br>letter sequences</div>
+                      <div class="mockup-feedback-value">64%</div>
+                    </div>
+                  </div>
+                  <div class="mockup-feedback-footer">
+                    <button class="mockup-continue-btn">CONTINUE</button>
+                  </div>
+                </div>
+                <div class="mockup-label" data-lang="en">↑ Step 1: Click "CONTINUE" on this feedback page</div>
+                <div class="mockup-label" data-lang="zh">↑ 步骤1：在此反馈页面点击 "CONTINUE"</div>
+              </div>
+
+              <!-- Mockup 2: Show Data Button (illustrates step 2) -->
+              <div class="mockup-container">
+                <div class="mockup-showdata-area">
+                  <div class="mockup-showdata-border">
+                    <button class="mockup-showdata-btn">Show data</button>
+                  </div>
+                </div>
+                <div class="mockup-label" data-lang="en">↑ Step 2: Click "Show data"</div>
+                <div class="mockup-label" data-lang="zh">↑ 步骤2：点击 "Show data"</div>
+              </div>
+
+              <!-- Mockup 3: Data Display (illustrates step 3) -->
+              <div class="mockup-container" style="margin-top: 20px;">
+                <div class="mockup-data-display">
+                  <div class="mockup-data-row">
+                    <span class="data-green">1</span>
+                    <span class="data-label">practiseLetters</span>
+                    <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
+                      class="data-num">0</span>
+                    <span class="data-gray">6416</span>
+                    <span class="data-highlight">999999</span>
+                    <span class="data-num">0</span>
+                    <span class="data-num">2</span><span class="data-num">0</span><span class="data-num">2</span><span
+                      class="data-num">0</span>
+                  </div>
+                  <div class="mockup-data-row">
+                    <span class="data-green">1</span>
+                    <span class="data-label">practiseLetters</span>
+                    <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
+                      class="data-num">0</span>
+                    <span class="data-gray">2827</span>
+                    <span class="data-highlight">999999</span>
+                    <span class="data-num">0</span>
+                    <span class="data-num">2</span><span class="data-num">0</span><span class="data-num">2</span><span
+                      class="data-num">2</span>
+                  </div>
+                  <div class="mockup-data-row faded">
+                    <span class="data-green">1</span>
+                    <span class="data-label">practiseLetters</span>
+                    <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
+                      class="data-num">0</span>
+                    <span class="data-gray">4254</span>
+                    <span class="data-highlight">999999</span>
+                    <span class="data-num">0</span>
+                    <span class="data-num">3</span><span class="data-num">0</span><span class="data-num">3</span><span
+                      class="data-num">1</span>
+                  </div>
+                  <div class="data-dots">... (Data rows continue) ...</div>
+                </div>
+                <div class="mockup-label" data-lang="en">↑ Step 3: Copy all data rows into Excel</div>
+                <div class="mockup-label" data-lang="zh">↑ 步骤3：复制所有数据行到 Excel</div>
+              </div>
+
+              <div class="mockup-container" style="margin-top: 24px;">
+                <div class="btn-row" style="justify-content: center; margin-top: 0;">
+                  <a class="btn btn-light" data-lang="en" href="mailto:liuhuanpsylanguage@foxmail.com">Email the Research
+                    Team</a>
+                  <a class="btn btn-light" data-lang="zh" href="mailto:liuhuanpsylanguage@foxmail.com">发送邮件给研究团队</a>
+                </div>
+                <div class="mockup-label" data-lang="en" style="margin-bottom: 0;">↑ Step 4: Email the Research Team</div>
+                <div class="mockup-label" data-lang="zh" style="margin-bottom: 0;">↑ 步骤4：发送邮件给研究团队</div>
+              </div>
+            </article>
+            <article class="card">
+              <h3 data-lang="en">Video Tutorial</h3>
+              <h3 data-lang="zh">视频教程</h3>
+              <p class="muted" data-lang="en">If needed, use this tutorial for the full save-and-send process.</p>
+              <p class="muted" data-lang="zh">如果不确定如何操作，可参考下方完整教程视频。</p>
+              <video class="video" controls>
+                <source src="./video_tutorial.mp4" type="video/mp4" />
+              </video>
+            </article>
+          </div>
+        </article>
+
+        <article class="card" style="margin-top:14px; border: 2px solid #fecaca; background: #fffafb;">
+          <h3 data-lang="en" style="color: #991b1b;">⚠️ 3.6 Notes</h3>
+          <h3 data-lang="zh" style="color: #991b1b;">⚠️ 3.6 注意事项</h3>
+          <ul style="color: #991b1b; font-weight: 700;">
+            <li data-lang="en">In the self-paced reading task, to ensure accurate timing, please do not pause while a
+              sentence is on screen; instead, you may take breaks during the comprehension questions.</li>
+            <li data-lang="zh">请勿在句子呈现时暂停，建议在回答理解题时休息。</li>
+            <li data-lang="en">Please complete all questions carefully. If your accuracy is below 70%, your data will be
+              invalid, and you will only receive $1 for each invalid experiment.</li>
+            <li data-lang="zh">请认真完成所有题目，如果正确率低于70%，将会视为无效数据，每个无效实验只能获取1美元报酬。</li>
+            <li data-lang="en">We sincerely thank all participants who successfully complete the experiment with
+              exceptional performance, and we are pleased to award them an additional electronic Certificate of Honor in
+              recognition of their outstanding contribution.</li>
+            <li data-lang="zh">我们由衷感谢所有以优异表现成功完成实验的参与者，并很高兴为他们颁发额外的电子荣誉证书，以表彰他们的杰出贡献。</li>
+            <li data-lang="en">The experiment will end on March 15. Please ensure you complete it before the deadline.</li>
+            <li data-lang="zh">实验将在3月15日结束。请确保在截止日期之前完成。</li>
+            <li data-lang="en">If the participants are minors, parents can help them understand the procedures beforehand, but please do not interfere or give instructions during the actual experiment.</li>
+            <li data-lang="zh">如果参与者是未成年人，家长可以帮助他们提前理解实验程序，但请不要在实际实验期间干预或给予指导。</li>
           </ul>
         </article>
+      </section>
 
-        <article class="card">
-          <div class="step" data-lang="en">Step 2</div>
-          <div class="step" data-lang="zh">步骤 2</div>
-          <h3 data-lang="en">Pre-Screening Test</h3>
-          <h3 data-lang="zh">预筛选测试</h3>
-          <p class="muted" data-lang="en">Complete pre-screening first. Only participants who pass can proceed to Step 3
-            main experiments.</p>
-          <p class="muted" data-lang="zh">请先完成预筛选。仅通过预筛选的参与者可进入步骤3正式实验。</p>
-          <p class="muted" data-lang="en">Estimated time: about 5 minutes.</p>
-          <p class="muted" data-lang="zh">预计用时：约5分钟。</p>
-          <div class="btn-row">
-            <a id="preScreenBtn" class="btn btn-primary" href="./pre-screening.html" target="_blank"
-              rel="noopener">Pre-Screening Test</a>
-          </div>
-          <p id="pretestStatusEn" class="status-line status-neutral" data-lang="en">Pre-screening status: Not completed
-            yet.</p>
-          <p id="pretestStatusZh" class="status-line status-neutral" data-lang="zh">
-            &#x9884;&#x7B5B;&#x9009;&#x72B6;&#x6001;&#xFF1A;&#x5C1A;&#x672A;&#x5B8C;&#x6210;&#x3002;</p>
-          <div class="skip-section" data-lang="en" style="display: none;">
-            <div class="skip-label">Already passed pre-screening elsewhere?</div>
-            <button id="skipPreScreenBtnEn" class="btn-skip" type="button"><span class="skip-icon">&#x1F6AA;</span> Skip
-              Pre-Screening &amp; Go to Step 3</button>
-          </div>
-          <div class="skip-section" data-lang="zh" style="display: none;">
-            <div class="skip-label">
-              &#x5DF2;&#x901A;&#x8FC7;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#x9884;&#x5B9E;&#x9A8C;&#xFF1F;
-            </div>
-            <button id="skipPreScreenBtnZh" class="btn-skip" type="button"><span class="skip-icon">&#x1F6AA;</span>
-              &#x8DF3;&#x8FC7;&#x9884;&#x5B9E;&#x9A8C;&#xFF0C;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x6B65;&#x9AA4;3</button>
-          </div>
-        </article>
+      <section class="panel">
+        <h2 class="section-title" data-lang="en">Privacy &amp; Confidentiality</h2>
+        <h2 class="section-title" data-lang="zh">隐私与保密</h2>
+        <p data-lang="en">Your privacy is our utmost priority. All data collected will be strictly confidential, fully
+          anonymised, and used solely for academic research purposes. Any directly identifying information (such as your
+          name) will be removed and replaced with an anonymous code. The key linking this code to personal details will be
+          stored securely and separately from research data. All personal information will be destroyed five years after
+          project completion.</p>
+        <p data-lang="zh">
+          您的隐私是我们的首要任务。所有收集的数据将严格保密、完全匿名化，并仅用于学术研究目的。任何可直接识别身份的信息（如姓名）都将被删除并以匿名代码替代。用于关联匿名代码与个人信息的密钥将被安全、独立存储。所有个人信息将在项目完成五年后销毁。
+        </p>
+        <p data-lang="en">Anonymised data may be made openly available via trusted repositories (e.g. Open Science
+          Framework: https://osf.io/) to support future research. This study has been reviewed by the University Research
+          Ethics Committee and has received a favourable ethical opinion. Participation is entirely voluntary, and you may
+          withdraw at any time without giving a reason.</p>
+        <p data-lang="zh">匿名化数据可能通过可信存储库（如开放科学框架：https://osf.io/）公开，以支持未来研究。本研究已通过大学研究伦理委员会审查并获得伦理批准。参与完全自愿，您可在任何时候无理由退出。
+        </p>
+      </section>
 
-        <article class="card">
-          <div class="step" data-lang="en">Step 3</div>
-          <div class="step" data-lang="zh">步骤 3</div>
-          <h3 data-lang="en">Main Study</h3>
-          <h3 data-lang="zh">正式实验</h3>
-          <p class="muted" data-lang="en">The main study consists of four experiments. The six subsections below guide
-            you through task scope, task outline, compensation, experiment access, data submission, and key guidelines.
-          </p>
-          <p class="muted" data-lang="zh">正式实验模块由4个实验组成，以下6个小节将指引您进行实验：任务范围、任务说明、报酬标准、实验入口、数据提交与关键注意事项。</p>
-        </article>
-      </div>
-    </section>
+      <section class="panel">
+        <h2 class="section-title" data-lang="en">Contact</h2>
+        <h2 class="section-title" data-lang="zh">联系方式</h2>
+        <p data-lang="en">School of English Studies, Beijing International Studies University<br />Email: <a
+            href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">WeChat:
+            LH15122773753</a></p>
+        <p data-lang="zh">北京第二外国语学院英语学院<br />邮箱：<a
+            href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a
+            href="#wechat-qr">微信：LH15122773753</a></p>
+        <p class="muted" data-lang="en">No.1 Dingfuzhuang Nanli, Chaoyang District, Beijing, China</p>
+        <p class="muted" data-lang="zh">中国北京市朝阳区定福庄南里1号</p>
 
-    <section class="panel" id="step3-section">
-      <h2 class="section-title" data-lang="en">Step 3: Main Study</h2>
-      <h2 class="section-title" data-lang="zh">步骤3：正式实验</h2>
-      <p class="muted" data-lang="en">This stage contains four experiments. The six subsections below provide the
-        complete guidance for participation.</p>
-      <p class="muted" data-lang="zh">本阶段包含4个实验，以下6个小节提供完整参与指引。</p>
-      <p id="step3LockEn" class="lock-note" data-lang="en" hidden>Step 3 is currently locked because pre-screening
-        requirements (score, HSK level, or native language) were not met.</p>
-      <p id="step3LockZh" class="lock-note" data-lang="zh" hidden>由于未达到预筛选要求（得分、HSK等级或母语条件），步骤3已锁定。</p>
-      <p id="step3NoneEn" class="lock-note-info" data-lang="en" hidden>&#x1F512; Step 3 is locked. Please complete Step
-        2 pre-screening first and pass the test before accessing the main experiments.</p>
-      <p id="step3NoneZh" class="lock-note-info" data-lang="zh" hidden>&#x1F512; 步骤3已锁定。请先完成步骤2的预筛选测试并通过，才能进入正式实验。</p>
-
-      <article class="card">
-        <h3 data-lang="en">3.1 Participation Content</h3>
-        <h3 data-lang="zh">3.1 参与内容</h3>
-        <div class="split">
-          <div>
-            <p class="muted" data-lang="en"><strong>Study Structure (4 Experiments)</strong></p>
-            <p class="muted" data-lang="zh"><strong>研究结构（4个实验）</strong></p>
-            <ul>
-              <li data-lang="en">Experiment 1 and 2: self-paced sentence reading only.</li>
-              <li data-lang="zh">实验1和实验2：仅包含自定步调句子阅读。</li>
-              <li data-lang="en">Experiment 3 and 4: sentence reading plus a working-memory test.</li>
-              <li data-lang="zh">实验3和实验4：包含句子阅读与工作记忆测试。</li>
-              <li data-lang="en">If you complete both Experiment 3 and 4, the memory test is required only once.</li>
-              <li data-lang="zh">若同时参与实验3和4，工作记忆测试只需完成一次。</li>
-            </ul>
+        <div class="contact-grid">
+          <div class="contact-card" id="wechat-qr">
+            <img src="./wechat.jpg" alt="WeChat QR" />
+            <div style="margin-top:8px; font-weight:700;">WeChat</div>
           </div>
-          <div>
-            <p class="muted" data-lang="en"><strong>Time and Task Composition</strong></p>
-            <p class="muted" data-lang="zh"><strong>时间与任务构成</strong></p>
-            <ol>
-              <li data-lang="en">Main reading task: about 50 minutes (Experiment 1/2), about 30 minutes (Experiment
-                3/4).</li>
-              <li data-lang="zh">主阅读任务：实验1/2约50分钟，实验3/4约30分钟。</li>
-              <li data-lang="en">Working-memory test: about 20 minutes (Experiment 3/4 only).</li>
-              <li data-lang="zh">工作记忆测试：约20分钟（仅实验3/4）。</li>
-            </ol>
-            <p class="muted" data-lang="en">Actual duration may vary by reading speed and rest intervals.</p>
-            <p class="muted" data-lang="zh">实际用时会因个人阅读速度与休息安排略有差异。</p>
+          <div class="contact-card">
+            <img src="./email.png" alt="Email QR" />
+            <div style="margin-top:8px; font-weight:700;">Email</div>
           </div>
         </div>
-      </article>
+      </section>
 
-      <article class="card" style="margin-top:14px;">
-        <h3 data-lang="en">3.2 Brief Outline of Tasks</h3>
-        <h3 data-lang="zh">3.2 任务简要说明</h3>
-        <p class="muted" data-lang="en">Step 3 includes two task types: sentence reading and working-memory test. All
-          tasks are conducted online and require no software installation.</p>
-        <p class="muted" data-lang="zh">步骤3包含两类任务：句子阅读与工作记忆测试。所有任务均在线进行，无需安装软件。</p>
-        <div class="split">
-          <article class="card">
-            <h3 data-lang="en">a. Sentence Reading Task</h3>
-            <h3 data-lang="zh">a. 句子阅读任务</h3>
-            <p data-lang="en">Read each sentence at your own pace and answer Yes/No comprehension questions.</p>
-            <p data-lang="zh">您将按自定步调阅读句子，并回答是/否理解题。</p>
-          </article>
-          <article class="card">
-            <h3 data-lang="en">b. Working Memory</h3>
-            <h3 data-lang="zh">b. 工作记忆测试</h3>
-            <p data-lang="en">In Experiment 3/4, complete an Automated Operation Span Task: remember letter sequences
-              while judging simple equations.</p>
-            <p data-lang="zh">在实验3/4中，您需完成自动化操作广度任务：在记忆字母序列的同时判断简单算式正误。</p>
-          </article>
+      <footer class="footer">
+        <div data-lang="en">If you have any questions or concerns about this research, please contact the research team at
+          <a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>.
         </div>
-      </article>
-
-      <article class="card" style="margin-top:14px;">
-        <h3 data-lang="en">3.3 Compensation</h3>
-        <h3 data-lang="zh">3.3 报酬标准</h3>
-        <p class="muted" data-lang="en">You can complete any number of experiments. Payment is based on how many you
-          finish.</p>
-        <p class="muted" data-lang="zh">您可参加任意数量的实验，报酬按完成数量发放。</p>
-        <div class="grid-4">
-          <article class="money">
-            <div data-lang="en">Complete 1 experiment</div>
-            <div data-lang="zh">完成 1 个实验</div>
-            <strong>$15</strong>
-            <div class="chips"><span>£11</span><span>A$20</span><span>C$20</span><span>¥100</span></div>
-          </article>
-          <article class="money">
-            <div data-lang="en">Complete 2 experiments</div>
-            <div data-lang="zh">完成 2 个实验</div>
-            <strong>$30</strong>
-            <div class="chips"><span>£22</span><span>A$40</span><span>C$40</span><span>¥200</span></div>
-          </article>
-          <article class="money">
-            <div data-lang="en">Complete 3 experiments</div>
-            <div data-lang="zh">完成 3 个实验</div>
-            <strong>$45</strong>
-            <div class="chips"><span>£33</span><span>A$60</span><span>C$60</span><span>¥300</span></div>
-          </article>
-          <article class="money">
-            <div data-lang="en">Complete all 4 experiments</div>
-            <div data-lang="zh">完成全部 4 个实验</div>
-            <strong>$60</strong>
-            <div class="chips"><span>£44</span><span>A$80</span><span>C$80</span><span>¥400</span></div>
-          </article>
-        </div>
-      </article>
-
-      <article class="card" style="margin-top:14px;">
-        <h3 data-lang="en">3.4 Main Experiment Links</h3>
-        <h3 data-lang="zh">3.4 正式实验入口</h3>
-        <p class="muted" data-lang="en"><strong>Invitation note:</strong> If you have passed pre-screening, use the
-          links below to enter the main experiments.</p>
-        <p class="muted" data-lang="zh"><strong>邀请说明：</strong>若您已通过预筛选，请使用下方链接进入正式实验。</p>
-        <p class="muted" data-lang="en">Experiment 1/2 are reading-only; Experiment 3/4 include reading plus memory
-          testing.</p>
-        <p class="muted" data-lang="zh">实验1/2为阅读任务；实验3/4为阅读任务加记忆测试。</p>
-        <div class="exp-grid">
-          <a id="exp1Link" class="exp-link exp-link-disabled" href="https://farm.pcibex.net/p/tJeHAM/" target="_blank"
-            rel="noopener" aria-disabled="true" data-tip="">
-            <div class="label">Experiment 1</div>
-            <h3 data-lang="en">Start Experiment 1</h3>
-            <h3 data-lang="zh">开始实验 1</h3>
-            <div class="muted">farm.pcibex.net/p/tJeHAM/</div>
-          </a>
-          <a id="exp2Link" class="exp-link exp-link-disabled" href="https://farm.pcibex.net/p/FrVOrI/" target="_blank"
-            rel="noopener" aria-disabled="true" data-tip="">
-            <div class="label">Experiment 2</div>
-            <h3 data-lang="en">Start Experiment 2</h3>
-            <h3 data-lang="zh">开始实验 2</h3>
-            <div class="muted">farm.pcibex.net/p/FrVOrI/</div>
-          </a>
-          <a class="exp-link" href="https://farm.pcibex.net/p/hDOUxY/" target="_blank" rel="noopener">
-            <div class="label">Experiment 3</div>
-            <h3 data-lang="en">Start Experiment 3</h3>
-            <h3 data-lang="zh">开始实验 3</h3>
-            <div class="muted">farm.pcibex.net/p/hDOUxY/</div>
-          </a>
-          <a class="exp-link" href="https://farm.pcibex.net/p/iqoocv/" target="_blank" rel="noopener">
-            <div class="label">Experiment 4</div>
-            <h3 data-lang="en">Start Experiment 4</h3>
-            <h3 data-lang="zh">开始实验 4</h3>
-            <div class="muted">farm.pcibex.net/p/iqoocv/</div>
-          </a>
-        </div>
-      </article>
-
-      <article class="card" style="margin-top:14px;">
-        <h3 data-lang="en">3.5 How to Save and Send Working Memory Data (Exp 3 & 4)</h3>
-        <h3 data-lang="zh">3.5 实验3/4工作记忆数据保存与提交</h3>
-        <div class="split">
-          <article class="card">
-            <ol>
-              <li data-lang="en">After the memory test, click <b>Continue</b>.</li>
-              <li data-lang="zh">完成记忆测试后，先点击 <b>Continue</b>。</li>
-              <li data-lang="en">On the next page, click <b>Show data</b>.</li>
-              <li data-lang="zh">在下一页点击 <b>Show data</b>。</li>
-              <li data-lang="en">Copy the output rows and save them into an Excel file.</li>
-              <li data-lang="zh">复制输出数据并保存到 Excel 文件。</li>
-              <li data-lang="en">Send the file to <a
-                  href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>.</li>
-              <li data-lang="zh">将文件发送至 <a
-                  href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</li>
-            </ol>
-
-            <!-- Mockup 1: Feedback Block (illustrates step 1) -->
-            <div class="mockup-container">
-              <div class="mockup-feedback">
-                <div class="mockup-feedback-header">Feedback of the final test block</div>
-                <div class="mockup-feedback-rows">
-                  <div class="mockup-feedback-row">
-                    <div class="mockup-feedback-label">Complete correct trials in the<br>final block of in which both
-                      letter and<br>math tasks were correct (O-span score)</div>
-                    <div class="mockup-feedback-value">30 points (0%)</div>
-                  </div>
-                  <div class="mockup-feedback-row">
-                    <div class="mockup-feedback-label">Percentage correct math<br>problems</div>
-                    <div class="mockup-feedback-value">89%</div>
-                  </div>
-                  <div class="mockup-feedback-row">
-                    <div class="mockup-feedback-label">Percentage correctly remembered<br>letter sequences</div>
-                    <div class="mockup-feedback-value">64%</div>
-                  </div>
-                </div>
-                <div class="mockup-feedback-footer">
-                  <button class="mockup-continue-btn">CONTINUE</button>
-                </div>
-              </div>
-              <div class="mockup-label" data-lang="en">↑ Step 1: Click "CONTINUE" on this feedback page</div>
-              <div class="mockup-label" data-lang="zh">↑ 步骤1：在此反馈页面点击 "CONTINUE"</div>
-            </div>
-
-            <!-- Mockup 2: Show Data Button (illustrates step 2) -->
-            <div class="mockup-container">
-              <div class="mockup-showdata-area">
-                <div class="mockup-showdata-border">
-                  <button class="mockup-showdata-btn">Show data</button>
-                </div>
-              </div>
-              <div class="mockup-label" data-lang="en">↑ Step 2: Click "Show data"</div>
-              <div class="mockup-label" data-lang="zh">↑ 步骤2：点击 "Show data"</div>
-            </div>
-
-            <!-- Mockup 3: Data Display (illustrates step 3) -->
-            <div class="mockup-container" style="margin-top: 20px;">
-              <div class="mockup-data-display">
-                <div class="mockup-data-row">
-                  <span class="data-green">1</span>
-                  <span class="data-label">practiseLetters</span>
-                  <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
-                    class="data-num">0</span>
-                  <span class="data-gray">6416</span>
-                  <span class="data-highlight">999999</span>
-                  <span class="data-num">0</span>
-                  <span class="data-num">2</span><span class="data-num">0</span><span class="data-num">2</span><span
-                    class="data-num">0</span>
-                </div>
-                <div class="mockup-data-row">
-                  <span class="data-green">1</span>
-                  <span class="data-label">practiseLetters</span>
-                  <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
-                    class="data-num">0</span>
-                  <span class="data-gray">2827</span>
-                  <span class="data-highlight">999999</span>
-                  <span class="data-num">0</span>
-                  <span class="data-num">2</span><span class="data-num">0</span><span class="data-num">2</span><span
-                    class="data-num">2</span>
-                </div>
-                <div class="mockup-data-row faded">
-                  <span class="data-green">1</span>
-                  <span class="data-label">practiseLetters</span>
-                  <span class="data-num">0</span><span class="data-num">0</span><span class="data-num">0</span><span
-                    class="data-num">0</span>
-                  <span class="data-gray">4254</span>
-                  <span class="data-highlight">999999</span>
-                  <span class="data-num">0</span>
-                  <span class="data-num">3</span><span class="data-num">0</span><span class="data-num">3</span><span
-                    class="data-num">1</span>
-                </div>
-                <div class="data-dots">... (Data rows continue) ...</div>
-              </div>
-              <div class="mockup-label" data-lang="en">↑ Step 3: Copy all data rows into Excel</div>
-              <div class="mockup-label" data-lang="zh">↑ 步骤3：复制所有数据行到 Excel</div>
-            </div>
-
-            <div class="mockup-container" style="margin-top: 24px;">
-              <div class="btn-row" style="justify-content: center; margin-top: 0;">
-                <a class="btn btn-light" data-lang="en" href="mailto:liuhuanpsylanguage@foxmail.com">Email the Research
-                  Team</a>
-                <a class="btn btn-light" data-lang="zh" href="mailto:liuhuanpsylanguage@foxmail.com">发送邮件给研究团队</a>
-              </div>
-              <div class="mockup-label" data-lang="en" style="margin-bottom: 0;">↑ Step 4: Email the Research Team</div>
-              <div class="mockup-label" data-lang="zh" style="margin-bottom: 0;">↑ 步骤4：发送邮件给研究团队</div>
-            </div>
-          </article>
-          <article class="card">
-            <h3 data-lang="en">Video Tutorial</h3>
-            <h3 data-lang="zh">视频教程</h3>
-            <p class="muted" data-lang="en">If needed, use this tutorial for the full save-and-send process.</p>
-            <p class="muted" data-lang="zh">如果不确定如何操作，可参考下方完整教程视频。</p>
-            <video class="video" controls>
-              <source src="./video_tutorial.mp4" type="video/mp4" />
-            </video>
-          </article>
-        </div>
-      </article>
-
-      <article class="card" style="margin-top:14px; border: 2px solid #fecaca; background: #fffafb;">
-        <h3 data-lang="en" style="color: #991b1b;">⚠️ 3.6 Notes</h3>
-        <h3 data-lang="zh" style="color: #991b1b;">⚠️ 3.6 注意事项</h3>
-        <ul style="color: #991b1b; font-weight: 700;">
-          <li data-lang="en">In the self-paced reading task, to ensure accurate timing, please do not pause while a
-            sentence is on screen; instead, you may take breaks during the comprehension questions.</li>
-          <li data-lang="zh">请勿在句子呈现时暂停，建议在回答理解题时休息。</li>
-          <li data-lang="en">Please complete all questions carefully. If your accuracy is below 70%, your data will be
-            invalid, and you will only receive $1 for each invalid experiment.</li>
-          <li data-lang="zh">请认真完成所有题目，如果正确率低于70%，将会视为无效数据，每个无效实验只能获取1美元报酬。</li>
-          <li data-lang="en">We sincerely thank all participants who successfully complete the experiment with
-            exceptional performance, and we are pleased to award them an additional electronic Certificate of Honor in
-            recognition of their outstanding contribution.</li>
-          <li data-lang="zh">我们由衷感谢所有以优异表现成功完成实验的参与者，并很高兴为他们颁发额外的电子荣誉证书，以表彰他们的杰出贡献。</li>
-          <li data-lang="en">The experiment will end on March 18. Please ensure you complete it before the deadline.
-          </li>
-          <li data-lang="zh">实验将在3月18日结束。请确保在截止日期之前完成。</li>
-          <li data-lang="en">If the participants are minors, parents can help them understand the procedures beforehand,
-            but please do not interfere or give instructions during the actual experiment.</li>
-          <li data-lang="zh">如果参与者是未成年人，家长可以帮助他们提前理解实验程序，但请不要在实际实验期间干预或给予指导。</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="panel">
-      <h2 class="section-title" data-lang="en">Privacy &amp; Confidentiality</h2>
-      <h2 class="section-title" data-lang="zh">隐私与保密</h2>
-      <p data-lang="en">Your privacy is our utmost priority. All data collected will be strictly confidential, fully
-        anonymised, and used solely for academic research purposes. Any directly identifying information (such as your
-        name) will be removed and replaced with an anonymous code. The key linking this code to personal details will be
-        stored securely and separately from research data. All personal information will be destroyed five years after
-        project completion.</p>
-      <p data-lang="zh">
-        您的隐私是我们的首要任务。所有收集的数据将严格保密、完全匿名化，并仅用于学术研究目的。任何可直接识别身份的信息（如姓名）都将被删除并以匿名代码替代。用于关联匿名代码与个人信息的密钥将被安全、独立存储。所有个人信息将在项目完成五年后销毁。
-      </p>
-      <p data-lang="en">Anonymised data may be made openly available via trusted repositories (e.g. Open Science
-        Framework: https://osf.io/) to support future research. This study has been reviewed by the University Research
-        Ethics Committee and has received a favourable ethical opinion. Participation is entirely voluntary, and you may
-        withdraw at any time without giving a reason.</p>
-      <p data-lang="zh">匿名化数据可能通过可信存储库（如开放科学框架：https://osf.io/）公开，以支持未来研究。本研究已通过大学研究伦理委员会审查并获得伦理批准。参与完全自愿，您可在任何时候无理由退出。
-      </p>
-    </section>
-
-    <section class="panel">
-      <h2 class="section-title" data-lang="en">Contact</h2>
-      <h2 class="section-title" data-lang="zh">联系方式</h2>
-      <p data-lang="en">School of English Studies, Beijing International Studies University<br />Email: <a
-          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a href="#wechat-qr">WeChat:
-          LH15122773753</a></p>
-      <p data-lang="zh">北京第二外国语学院英语学院<br />邮箱：<a
-          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a> | <a
-          href="#wechat-qr">微信：LH15122773753</a></p>
-      <p class="muted" data-lang="en">No.1 Dingfuzhuang Nanli, Chaoyang District, Beijing, China</p>
-      <p class="muted" data-lang="zh">中国北京市朝阳区定福庄南里1号</p>
-
-      <div class="contact-grid">
-        <div class="contact-card" id="wechat-qr">
-          <img src="./wechat.jpg" alt="WeChat QR" />
-          <div style="margin-top:8px; font-weight:700;">WeChat</div>
-        </div>
-        <div class="contact-card">
-          <img src="./email.png" alt="Email QR" />
-          <div style="margin-top:8px; font-weight:700;">Email</div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div data-lang="en">If you have any questions or concerns about this research, please contact the research team at
-        <a href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>.
-      </div>
-      <div data-lang="zh">如果您对本研究有任何疑问或建议，请联系研究团队邮箱：<a
-          href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</div>
-      <div style="margin-top:8px;" data-lang="en"><a href="#wechat-qr">WeChat: LH15122773753</a> or scan the QR code
-        above.</div>
-      <div style="margin-top:8px;" data-lang="zh"><a href="#wechat-qr">微信：LH15122773753</a> 或扫描上方二维码。</div>
-      <div style="margin-top:10px;" data-lang="en">© 2026 School of English Studies, Beijing International Studies
-        University. All rights reserved.</div>
-      <div style="margin-top:10px;" data-lang="zh">© 2026 北京第二外国语学院 英语学院. 保留所有权利.</div>
-    </footer>
+        <div data-lang="zh">如果您对本研究有任何疑问或建议，请联系研究团队邮箱：<a
+            href="mailto:liuhuanpsylanguage@foxmail.com">liuhuanpsylanguage@foxmail.com</a>。</div>
+        <div style="margin-top:8px;" data-lang="en"><a href="#wechat-qr">WeChat: LH15122773753</a> or scan the QR code
+          above.</div>
+        <div style="margin-top:8px;" data-lang="zh"><a href="#wechat-qr">微信：LH15122773753</a> 或扫描上方二维码。</div>
+        <div style="margin-top:10px;" data-lang="en">© 2026 School of English Studies, Beijing International Studies
+          University. All rights reserved.</div>
+        <div style="margin-top:10px;" data-lang="zh">© 2026 北京第二外国语学院 英语学院. 保留所有权利.</div>
+      </footer>
+    </div>
   </div>
 
   <script>
@@ -1236,8 +1287,16 @@
     const skipBtnZh = document.getElementById("skipPreScreenBtnZh");
     const exp1Link = document.getElementById("exp1Link");
     const exp2Link = document.getElementById("exp2Link");
+    const exp3Link = document.getElementById("exp3Link");
+    const exp4Link = document.getElementById("exp4Link");
     let currentLang = "en";
     let pretestState = "none";
+
+    function getPreScreenClosedTip() {
+      return currentLang === "en"
+        ? "The pre-screening test has reached its target and is now closed. Thank you for your support."
+        : "预筛选测试已收集到足够数据，入口已关闭。";
+    }
 
     function getExp1ClosedTip() {
       return currentLang === "en"
@@ -1251,7 +1310,24 @@
         : "实验2已收集到足够数据，入口已关闭。";
     }
 
+    function getExp3ClosedTip() {
+      return currentLang === "en"
+        ? "Recruitment for Experiment 3 has reached its target. We invite you to participate in one of our other ongoing experiments. Thank you for your support."
+        : "实验3已收集到足够数据，入口已关闭。";
+    }
+
+    function getExp4ClosedTip() {
+      return currentLang === "en"
+        ? "Recruitment for Experiment 4 has reached its target. We invite you to participate in one of our other ongoing experiments. Thank you for your support."
+        : "实验4已收集到足够数据，入口已关闭。";
+    }
+
     function applyExpClosedTips() {
+      if (preScreenBtn) {
+        const tipPre = getPreScreenClosedTip();
+        preScreenBtn.setAttribute("title", tipPre);
+        preScreenBtn.setAttribute("aria-label", tipPre);
+      }
       if (exp1Link) {
         const tip1 = getExp1ClosedTip();
         exp1Link.setAttribute("data-tip", tip1);
@@ -1263,6 +1339,18 @@
         exp2Link.setAttribute("data-tip", tip2);
         exp2Link.setAttribute("title", tip2);
         exp2Link.setAttribute("aria-label", tip2);
+      }
+      if (exp3Link) {
+        const tip3 = getExp3ClosedTip();
+        exp3Link.setAttribute("data-tip", tip3);
+        exp3Link.setAttribute("title", tip3);
+        exp3Link.setAttribute("aria-label", tip3);
+      }
+      if (exp4Link) {
+        const tip4 = getExp4ClosedTip();
+        exp4Link.setAttribute("data-tip", tip4);
+        exp4Link.setAttribute("title", tip4);
+        exp4Link.setAttribute("aria-label", tip4);
       }
     }
 
@@ -1363,6 +1451,13 @@
     skipBtnEn.addEventListener("click", handleSkipPreScreen);
     skipBtnZh.addEventListener("click", handleSkipPreScreen);
 
+    if (preScreenBtn) {
+      preScreenBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert(getPreScreenClosedTip());
+      });
+    }
+
     if (exp1Link) {
       exp1Link.addEventListener("click", function (event) {
         event.preventDefault();
@@ -1374,6 +1469,20 @@
       exp2Link.addEventListener("click", function (event) {
         event.preventDefault();
         alert(getExp2ClosedTip());
+      });
+    }
+
+    if (exp3Link) {
+      exp3Link.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert(getExp3ClosedTip());
+      });
+    }
+
+    if (exp4Link) {
+      exp4Link.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert(getExp4ClosedTip());
       });
     }
 
